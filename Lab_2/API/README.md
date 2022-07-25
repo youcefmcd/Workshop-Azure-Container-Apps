@@ -229,4 +229,4 @@ az containerapp show -n $APPLICATION_NAME \
 
 ## Fin du Lab 2
 
-__Conserver le resource group "RG-Lab2", il servira pour le Lab 4 __
+__Conserver le resource group "RG-Lab2", il servira pour le Lab 4__
