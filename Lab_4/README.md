@@ -240,5 +240,8 @@ for ((i=0; i<20; ++i)); do curl $(echo "https://$(az containerapp show -n $APPLI
 La réponse API Green doit représenter environ une requête sur 5.
 
 ## Fin du Lab 4
+Supprimer le resource group "RG-Lab2"
+```bash
+az group delete -n "RG-Lab2" -o jsonc
+```
 
-__Conserver le resource group "RG-Lab2", il servira pour le Lab 5 __
