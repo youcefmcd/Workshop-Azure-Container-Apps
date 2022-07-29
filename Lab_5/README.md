@@ -6,6 +6,7 @@ Découvrir comment pour une Application Container :
 - Afficher les X derniers logs
 - Afficher les logs applicatifs en temps réel 
 - Faire des requêtes sur les logs stockés dans Azure Log Analytics
+- Observer les métriques
 
 ## Pré-requis sur le poste d'administration
 - Un abonnement Azure avec les privilèges d'administration (idéalement owner)
