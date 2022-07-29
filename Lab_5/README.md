@@ -91,7 +91,7 @@ Il est souvent utile de consulter les journaux d’un conteneur en temps réel. 
 ### Avec le portail Azure
 Dans le portail Azure, aller dans la ressource Container App "nginx" créée dans le resource group "RG-Lab5", et sélectionner le menu __Log Stream__ dans les options de monitoring à gauche.
 
-<img width='800' src='../images/LogStream1.png'/>
+<img width='1024' src='../images/LogStream1.png'/>
 
 Rafraichir la page dans le navigateur pour voir de nouveaux évènements apparaitre dans les logs.
 
@@ -147,7 +147,7 @@ Dans le panneau Results  (en bas à droite), cliquer sur > pour avoir plus de d�
 
 La liste des champs disponibles dans la table Custom "ContainerAppConsoleLogs_CL" est visible dans le panneau central en bas.
 
-<img width='800' src='../images/LogAnalytics1.png'/>
+<img width='1024' src='../images/LogAnalytics1.png'/>
 
 Informations additionnelles pour le langage Kusto : https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/
 
@@ -188,7 +188,7 @@ Liste des métriques disponibles : https://docs.microsoft.com/en-us/azure/contai
 
 Utiliser Metrics Explorer dans le portail Azure pour monitorer et analyser les données des métriques.
 
-<img width='800' src='../images/Metrics1.png'/>
+<img width='1024' src='../images/Metrics1.png'/>
 
 
 ## Fin du Lab 4
