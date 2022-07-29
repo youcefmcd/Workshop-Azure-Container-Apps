@@ -3,7 +3,7 @@
 tags: #azure #azurecontainerapps #azurecli #cli 
 
 ## Objectif:
-L'objectif de ce Lab 2, c'est de déployer un Azure Container Environment et des Container Apps via Azure CLI 
+L'objectif de ce Lab 2, c'est de déployer une Container App via Azure CLI 
 
 
 ## Pré-requis sur le poste d'administration
@@ -219,7 +219,7 @@ Le message suivant doit être affiché :
 {"message":"hello API Bleue"}
 ```
 
-Voir la configuration déployée précédemment
+Voir la configuration faite précédemment
 
 ```bash
 az containerapp show -n $APPLICATION_NAME \
@@ -227,7 +227,6 @@ az containerapp show -n $APPLICATION_NAME \
 ```
 
 
-## Nettoyage
-```bash
-az group delete -n "RG-Lab2"
-```
+## Fin du Lab 2
+
+__Conserver le resource group "RG-Lab2", il servira pour le Lab 4__
