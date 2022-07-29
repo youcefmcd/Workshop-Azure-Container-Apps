@@ -135,7 +135,7 @@ Il est possible d'afficher un stream de journaux à partir d’un conteneur dans
 ## Faire des requêtes sur les logs 
 
 ### Depuis le portail Azure
-Dans le resource group "RG-Lab5", aller dans le Log Analytics Worskspace "stan-workspace-lab5" et sélectionner "Logs" dans le menu de gauche. 
+Dans le resource group "RG-Lab5", aller dans le Log Analytics Worskspace de ce lab et sélectionner "Logs" dans le menu de gauche. 
 
 Créer une nouvelle requête (qui récupère les 10 derniers logs de la Container App appelé nginx) en copiant/collant la requête Kusto suivante. Changer le time range en choisissant la dernière heure et l'exécuter avec le __bouton Run__
 
