@@ -190,8 +190,9 @@ Utiliser Metrics Explorer dans le portail Azure pour monitorer et analyser les d
 
 <img width='1024' src='../images/Metrics1.png'/>
 
+Vous pouvez utiliser le service __Azure Load Testing__ ou __ddosify__ (https://github.com/ddosify/ddosify) pour "bombarder" des requêtes sur l'url de la Container App et voir les métriques changer.
 
-## Fin du Lab 4
+## Fin du Lab 5
 Supprimer le resource group "RG-Lab5"
 ```bash
 az group delete -n "RG-Lab5" -o jsonc
