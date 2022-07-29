@@ -86,7 +86,7 @@ az containerapp create \
 Vérification du déploiement : ouvrir un navigateur Web et saisir le FQDN renvoyé par la commande précédente
 
 ## Voir les logs en temps réel
- il est souvent utile de consulter les journaux d’un conteneur en temps réel. Container Apps vous permet d’afficher un stream des messages des journaux `stdout` et `stderr` des conteneurs en utilisant le portail Azure ou l’interface Azure CLI.
+Il est souvent utile de consulter les journaux d’un conteneur en temps réel. Container Apps vous permet d’afficher un stream des messages des journaux `stdout` et `stderr` des conteneurs en utilisant le portail Azure ou l’interface Azure CLI.
 
 ### Avec le portail Azure
 Dans le portail Azure, aller dans la ressource Container App "nginx" créée dans le resource group "RG-Lab5", et sélectionner le menu __Log Stream__ dans les options de monitoring à gauche.
