@@ -99,8 +99,6 @@ Ouvrir un navigateur Web et saisir le FQDN renvoyé par la commande précédente
 
 ## Création d'une container app depuis une image dans une Azure Container Registry
 
-est ce qu'on build  l'application api bleue/verte pour la mettre dans l'ACR ?
-
 ### Création d'une Azure Container Registry
 
 Affecter les variables
