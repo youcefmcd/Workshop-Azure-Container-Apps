@@ -58,6 +58,10 @@ az monitor log-analytics workspace create \
  --workspace-name $LOG_ANALYTICS_NAME \
  --location $LOCATION \
  -o jsonc
+
+LOG_ANALYTICS_WORKSPACE_CLIENT_ID=`az monitor log-analytics workspace show --query customerId -g $RESOURCE_GROUP -n $LOG_ANALYTICS_NAME --out tsv`
+
+LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY=`az monitor log-analytics workspace get-shared-keys --query primarySharedKey -g $RESOURCE_GROUP -n $LOG_ANALYTICS_NAME --out tsv`
 ```
 
 ### Création d'un environnement
@@ -65,15 +69,15 @@ Un environnement dans Azure Container Apps défini la frontière de sécurité a
 
 Les applications déployées dans le même environnement se partagent un même VNet et écrivent dans le même Log Analytics Workspace.
 
-Créer un nouvel environnement (__A modifier : mettre l'ID et la primarykey du logsanalyticworspace créé précédemment__)
+Créer un nouvel environnement : 
 
 ```bash
 az containerapp env create \
   --name $CONTAINERAPPS_ENVIRONMENT \
   --resource-group $RESOURCE_GROUP \
   --location $LOCATION \
-  --logs-workspace-id myLogsWorkspaceID \
-  --logs-workspace-key myLogsWorkspaceKey \
+  --logs-workspace-id $LOG_ANALYTICS_WORKSPACE_CLIENT_ID \
+  --logs-workspace-key $LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY \
   -o jsonc
 ```
 
