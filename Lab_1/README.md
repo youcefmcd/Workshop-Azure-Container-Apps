@@ -54,4 +54,8 @@ https://docs.microsoft.com/en-us/azure/container-apps/authentication<br><br>
 
 #### secrets
 <img width='800' src='../images/Lab_1/Lab_1_31.png'/><br>
-https://docs.microsoft.com/en-us/azure/container-apps/manage-secrets?tabs=arm-template
+https://docs.microsoft.com/en-us/azure/container-apps/manage-secrets?tabs=arm-template<br><br>
+
+#### Ingress
+<img width='800' src='../images/Lab_1/Lab_1_32.png'/><br>
+https://docs.microsoft.com/en-us/azure/container-apps/ingress?tabs=bash<br><br>
