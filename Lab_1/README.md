@@ -26,3 +26,10 @@ https://docs.microsoft.com/en-us/azure/container-apps/networking<br><br>
 https://docs.microsoft.com/en-us/azure/container-apps/revisions<br><br>
 <img width='800' src='../images/Lab_1/Lab_1_14.png'/><br>
 <img width='800' src='../images/Lab_1/Lab_1_15.png'/><br>
+
+### Setting Application
+<img width='800' src='../images/Lab_1/Lab_1_16.png'/><br>
+<img width='800' src='../images/Lab_1/Lab_1_17.png'/><br>
+<img width='800' src='../images/Lab_1/Lab_1_18.png'/><br>
+<img width='800' src='../images/Lab_1/Lab_1_19.png'/><br>
+<img width='800' src='../images/Lab_1/Lab_1_20.png'/><br>
