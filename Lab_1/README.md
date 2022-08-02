@@ -14,3 +14,7 @@ https://docs.microsoft.com/en-us/azure/container-apps/environment<br>
 <img width='800' src='../images/Lab_1/Lab_1_05.png'/><br>
 <img width='800' src='../images/Lab_1/Lab_1_06.png'/><br>
 https://docs.microsoft.com/en-us/azure/container-apps/networking<br>
+<img width='800' src='../images/Lab_1/Lab_1_07.png'/><br>
+<img width='800' src='../images/Lab_1/Lab_1_08.png'/><br>
+<img width='800' src='../images/Lab_1/Lab_1_09.png'/><br>
+<img width='800' src='../images/Lab_1/Lab_1_10.png'/><br>
