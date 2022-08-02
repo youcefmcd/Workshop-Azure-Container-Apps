@@ -5,7 +5,7 @@ Workshop 1 journée sur Azure Container Apps
 -   Introduction de l’atelier
 -   Rappel sur les services de conteneur dans Azure (Container Instance ; Web App for Container ; Azure Kubernetes ….) [https://docs.microsoft.com/en-us/azure/container-apps/compare-options](https://docs.microsoft.com/en-us/azure/container-apps/compare-options)
 -   Présentation de Azure Container Apps. (Stan)
--   Lab 1 : Déploiement d’une infrastructure Azure Container Apps depuis le portail Azure
+-   [Lab 1](Lab_1/README.md) : Déploiement d’une infrastructure Azure Container Apps depuis le portail Azure
 -   [Lab 2](/Lab_2/API/README.md) : Déploiement d’une infrastructure Azure Container Apps plus avancée en Azure CLI
 
 ### Après midi
