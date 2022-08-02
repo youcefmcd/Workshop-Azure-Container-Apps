@@ -41,4 +41,4 @@ https://docs.microsoft.com/en-us/azure/container-apps/scale-app<br><br>
 
 ### Settings
 #### Authentification
-<img width='800' src='../images/Lab_1/Lab_1_21.png'/><br>
+<img width='800' src='../images/Lab_1/Lab_1_22.png'/><br>
