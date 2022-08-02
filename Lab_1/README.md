@@ -19,7 +19,7 @@ https://docs.microsoft.com/en-us/azure/container-apps/networking<br><br>
 <img width='800' src='../images/Lab_1/Lab_1_09.png'/><br>
 <img width='800' src='../images/Lab_1/Lab_1_10.png'/><br>
 
-## Mavigation dans la cosole
+## Navigation dans la console
 <img width='800' src='../images/Lab_1/Lab_1_11.png'/><br>
 <img width='800' src='../images/Lab_1/Lab_1_12.png'/><br>
 <img width='800' src='../images/Lab_1/Lab_1_13.png'/><br>
@@ -32,7 +32,7 @@ https://docs.microsoft.com/en-us/azure/container-apps/revisions<br><br>
 <img width='800' src='../images/Lab_1/Lab_1_17.png'/><br>
 <img width='800' src='../images/Lab_1/Lab_1_18.png'/><br>
 <img width='800' src='../images/Lab_1/Lab_1_19.png'/><br>
-Variables d'evironnemnt ex: Connexion à base de données<br><br>
+Variables d'environnement ex: Connexion à la base de données<br><br>
 <img width='800' src='../images/Lab_1/Lab_1_20.png'/><br>
 Les sondes sont basées sur celles de Kubernetes<br>
 https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/<br><br>
@@ -52,7 +52,7 @@ https://docs.microsoft.com/en-us/azure/container-apps/authentication<br><br>
 <img width='800' src='../images/Lab_1/Lab_1_29.png'/><br>
 <img width='800' src='../images/Lab_1/Lab_1_30.png'/><br>
 
-#### secrets
+#### Secrets
 <img width='800' src='../images/Lab_1/Lab_1_31.png'/><br>
 https://docs.microsoft.com/en-us/azure/container-apps/manage-secrets?tabs=arm-template<br><br>
 
