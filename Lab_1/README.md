@@ -51,3 +51,7 @@ https://docs.microsoft.com/en-us/azure/container-apps/authentication<br><br>
 <img width='800' src='../images/Lab_1/Lab_1_28.png'/><br>
 <img width='800' src='../images/Lab_1/Lab_1_29.png'/><br>
 <img width='800' src='../images/Lab_1/Lab_1_30.png'/><br>
+
+#### secrets
+<img width='800' src='../images/Lab_1/Lab_1_31.png'/><br>
+https://docs.microsoft.com/en-us/azure/container-apps/manage-secrets?tabs=arm-template
