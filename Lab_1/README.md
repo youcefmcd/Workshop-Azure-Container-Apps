@@ -18,3 +18,6 @@ https://docs.microsoft.com/en-us/azure/container-apps/networking<br>
 <img width='800' src='../images/Lab_1/Lab_1_08.png'/><br>
 <img width='800' src='../images/Lab_1/Lab_1_09.png'/><br>
 <img width='800' src='../images/Lab_1/Lab_1_10.png'/><br>
+
+## Mavigation dans la cosole
+<img width='800' src='../images/Lab_1/Lab_1_11.png'/><br>
