@@ -35,5 +35,9 @@ https://docs.microsoft.com/en-us/azure/container-apps/revisions<br><br>
 Variables d'evironnemnt ex: Connexion à base de données<br><br>
 <img width='800' src='../images/Lab_1/Lab_1_20.png'/><br>
 Les sondes sont basées sur celles de Kubernetes<br>
-https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/<br><br>
+<img width='800' src='../images/Lab_1/Lab_1_21.png'/><br>
+https://docs.microsoft.com/en-us/azure/container-apps/scale-app<br><br>
 
+### Settings
+#### Authentification
