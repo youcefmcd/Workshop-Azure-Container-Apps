@@ -65,5 +65,14 @@ https://docs.microsoft.com/en-us/azure/container-apps/ingress?tabs=bash<br><br>
 https://docs.microsoft.com/en-us/azure/container-apps/custom-domains-certificates<br><br>
 
 ### Changement de l'application (container)
-
-
+<img width='800' src='../images/Lab_1/Lab_1_34.png'/><br>
+<img width='800' src='../images/Lab_1/Lab_1_35.png'/><br>
+<img width='800' src='../images/Lab_1/Lab_1_36.png'/><br>
+<img width='800' src='../images/Lab_1/Lab_1_37.png'/><br>
+<img width='800' src='../images/Lab_1/Lab_1_38.png'/><br>
+<img width='800' src='../images/Lab_1/Lab_1_39.png'/><br>
+<img width='800' src='../images/Lab_1/Lab_1_40.png'/><br>
+<img width='800' src='../images/Lab_1/Lab_1_41.png'/><br>
+<img width='800' src='../images/Lab_1/Lab_1_42.png'/><br>
+<img width='800' src='../images/Lab_1/Lab_1_43.png'/><br>
+<img width='800' src='../images/Lab_1/Lab_1_44.png'/><br>
