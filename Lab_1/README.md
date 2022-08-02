@@ -8,3 +8,4 @@ Dans la console Azure:<br>
 <img width='800' src='../images/Lab_1/Lab_1_00.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_01.png'/>
 https://docs.microsoft.com/en-us/azure/container-apps/environment
+<img width='800' src='../images/Lab_1/Lab_1_02.png'/>
