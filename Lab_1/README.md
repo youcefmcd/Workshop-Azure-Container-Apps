@@ -59,3 +59,11 @@ https://docs.microsoft.com/en-us/azure/container-apps/manage-secrets?tabs=arm-te
 #### Ingress
 <img width='800' src='../images/Lab_1/Lab_1_32.png'/><br>
 https://docs.microsoft.com/en-us/azure/container-apps/ingress?tabs=bash<br><br>
+
+#### Custom domains
+<img width='800' src='../images/Lab_1/Lab_1_33.png'/><br>
+https://docs.microsoft.com/en-us/azure/container-apps/custom-domains-certificates<br><br>
+
+### Changement de l'application (container)
+
+
