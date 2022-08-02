@@ -78,4 +78,4 @@ https://docs.microsoft.com/en-us/azure/container-apps/custom-domains-certificate
 <img width='800' src='../images/Lab_1/Lab_1_44.png'/><br>
 
 ### Fin du lab
-Détruire le groupe de ressourceÒ
+Détruire le groupe de ressource
