@@ -7,13 +7,13 @@ L'objectif de ce Lab 1, c'est de déployer une Container Apps simple et de faire
 Dans la console Azure:<br>
 <img width='800' src='../images/Lab_1/Lab_1_00.png'/><br>
 <img width='800' src='../images/Lab_1/Lab_1_01.png'/><br>
-https://docs.microsoft.com/en-us/azure/container-apps/environment<br>
+https://docs.microsoft.com/en-us/azure/container-apps/environment<br><br>
 <img width='800' src='../images/Lab_1/Lab_1_02.png'/><br>
 <img width='800' src='../images/Lab_1/Lab_1_03.png'/><br>
 <img width='800' src='../images/Lab_1/Lab_1_04.png'/><br>
 <img width='800' src='../images/Lab_1/Lab_1_05.png'/><br>
 <img width='800' src='../images/Lab_1/Lab_1_06.png'/><br>
-https://docs.microsoft.com/en-us/azure/container-apps/networking<br>
+https://docs.microsoft.com/en-us/azure/container-apps/networking<br><br>
 <img width='800' src='../images/Lab_1/Lab_1_07.png'/><br>
 <img width='800' src='../images/Lab_1/Lab_1_08.png'/><br>
 <img width='800' src='../images/Lab_1/Lab_1_09.png'/><br>
