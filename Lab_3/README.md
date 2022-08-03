@@ -40,7 +40,8 @@ az mysql server create \
   --admin-user $DB_ADMIN \
   --admin-password $DB_ADMIN_PASSWORD \
   --sku-name GP_Gen5_2 \
-  --ssl-enforcement Disabled  
+  --ssl-enforcement Disabled \
+  ---o jsonc  
   
 az mysql db create \
   --name $DB_NAME \
