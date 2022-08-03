@@ -54,7 +54,7 @@ jobs:
       #            --sku-name GP_Gen5_2 \
       #            --ssl-enforcement Disabled
 
-      - name: Create Log Analytics Workspace
+      - name: Create Environnment 
         run: |
           az monitor log-analytics workspace create \
             --resource-group ${{ env.RESOURCE_GROUP }} \
@@ -62,17 +62,15 @@ jobs:
             --location ${{ env.LOCATION }}
           LOG_ANALYTICS_WORKSPACE_CLIENT_ID=`az monitor log-analytics workspace show --query customerId -g ${{ env.RESOURCE_GROUP }} -n ${{ env.LOG_ANALYTICS_NAME }} --out tsv`
           LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY=`az monitor log-analytics workspace get-shared-keys --query primarySharedKey -g ${{ env.RESOURCE_GROUP }} -n ${{ env.LOG_ANALYTICS_NAME }} --out tsv`
-          echo $LOG_ANALYTICS_WORKSPACE_CLIENT_ID
-          echo $LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY
+          az containerapp env create \
+            --name ${{ env.CONTAINERAPPS_ENVIRONMENT }} \
+            --resource-group ${{ env.RESOURCE_GROUP }} \
+            --location ${{ env.LOCATION }} \
+            --logs-workspace-id $LOG_ANALYTICS_WORKSPACE_CLIENT_ID \
+            --logs-workspace-key $LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY
 
-#      - name: Create environnment Azure Container Apps
-#        run: |
-#          az containerapp env create \
-#            --name ${{ env.CONTAINERAPPS_ENVIRONMENT }} \
-#            --resource-group ${{ env.RESOURCE_GROUP }} \
-#            --location ${{ env.LOCATION }} \
-#            --logs-workspace-id $LOG_ANALYTICS_WORKSPACE_CLIENT_ID \
-#            --logs-workspace-key $LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY
+
+
 
 #      - name: Create Azure Container Registry
 #        run: |
