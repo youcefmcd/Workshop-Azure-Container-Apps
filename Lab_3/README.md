@@ -63,6 +63,26 @@ Pour suivre l'exécution du workflows:<br>
 <br>
 <img width='800' src='../images/Lab_3/Lab_3_07.png'/><br>
 
+Test du déploiement<br>
+"Resource Group":<br>
+```
+az group list -o table
+```
+"MySQL"<br>
+```
+az mysql server list -g RG-Lab3
+```
+"Environement Azure Container Apps"<br>
+```
+az containerapp env list -g RG-Lab3
+```
+"Azure Container Registry"<br>
+```
+az acr list -g RG-Lab3
+```
+
+
+
 
 
 
