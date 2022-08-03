@@ -7,7 +7,7 @@ env:
   RESOURCE_GROUP: "RG-Lab3"
   LOCATION: "eastus2"
   CONTAINERAPPS_ENVIRONMENT: "lab3-environment"
-  LOG_ANALYTICS_NAME: "pierrc-workspace-lab"
+  LOG_ANALYTICS_NAME: "pierrc-workspace-lab-3"
   ACR_NAME: "acrlab3xxx"
   ######################################################################################################################################################
   # Nous sommes dans un Workshop !
@@ -35,11 +35,11 @@ jobs:
         run: |
           az provider register --namespace Microsoft.App
 
-      - name: Creation du "Resource Group"
-        run: |
-          az group create \
-            --name ${{ env.RESOURCE_GROUP }} \
-            --location ${{ env.LOCATION }}
+#      - name: Creation du "Resource Group"
+#        run: |
+#          az group create \
+#            --name ${{ env.RESOURCE_GROUP }} \
+#            --location ${{ env.LOCATION }}
       #
       #      - name: Create MySQL Server
       #        run: |
@@ -55,11 +55,11 @@ jobs:
       - name: Create Log Analytics Workspace
         run: |
          az monitor log-analytics workspace create \
-          --resource-group ${{ env.RESOURCE_GROUP }} \
-          --workspace-name ${{ env.LOG_ANALYTICS_NAME }} \
-          --location ${{ env.LOCATION }}
-#          LOG_ANALYTICS_WORKSPACE_CLIENT_ID=`az monitor log-analytics workspace show --query customerId -g ${{ env.RESOURCE_GROUP  }} -n ${{ env.LOG_ANALYTICS_NAME }} --out tsv`
-#          LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY=`az monitor log-analytics workspace get-shared-keys --query primarySharedKey -g ${{ env.RESOURCE_GROUP }} -n ${{ env.LOG_ANALYTICS_NAME }} --out tsv`
+           --resource-group ${{ env.RESOURCE_GROUP }} \
+           --workspace-name ${{ env.LOG_ANALYTICS_NAME }} \
+           --location ${{ env.LOCATION }}
+         LOG_ANALYTICS_WORKSPACE_CLIENT_ID=`az monitor log-analytics workspace show --query customerId -g ${{ env.RESOURCE_GROUP  }} -n ${{ env.LOG_ANALYTICS_NAME }} --out tsv`
+         LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY=`az monitor log-analytics workspace get-shared-keys --query primarySharedKey -g ${{ env.RESOURCE_GROUP }} -n ${{ env.LOG_ANALYTICS_NAME }} --out tsv`
 
 #      - name: Create environnment Azure Container Apps
 #        run: |
