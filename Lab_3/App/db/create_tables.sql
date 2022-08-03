@@ -9,10 +9,10 @@ create table plaquage_ko (
     sum_plaquage_ko int
 );
 
-USE VALUE_DB;
+USE rugby_api;
 INSERT INTO plaquage_ok(Id,sum_plaquage_ok)
 VALUES (1,0);
 
-USE VALUE_DB;
+USE rugby_api;
 INSERT INTO plaquage_ko(Id,sum_plaquage_ko)
 VALUES (1,0)
