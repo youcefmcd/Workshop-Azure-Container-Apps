@@ -29,12 +29,26 @@ Et mettez le "Service Principal" comme ci-dessous:<br>
 Le déploiement de l'environnement se fera avec un "Workflow Github" (Pipeline), il déploiera:<br>
 - un "resource group"
 - un service "Azure Database for MySQL single server"
-- une base de donnée + 2 tables + regle de pare-feu
+- une base de donnée + 2 tables + règle de pare-feu
 - une "Azure Container Registry"
 - un "Log Analytics workspace"
 - un "Container Apps Environment"
 
-Le workflow est `.github/workflows/Lab_3_deployment_environnment.yaml`
+Le workflow est ici: `.github/workflows/Lab_3_deployment_environnment.yaml`<br>
+Paramatrez le bloc de variable du workflows, lignes 6 -> 18 <br>
+```
+env:
+  RESOURCE_GROUP: "RG-Lab3"
+  LOCATION: "eastus2"
+  CONTAINERAPPS_ENVIRONMENT: "environment-lab-3"
+  LOG_ANALYTICS_NAME: "pierrc-workspace-lab-3"
+  ACR_NAME: "acrlab3xxx"
+  DB_HOST_NAME: "DB-lab-3-xxx"
+  DB_NAME: "rugby_api"
+  DB_ADMIN: "pierrc"
+  DB_ADMIN_PASSWORD: Password123$       
+```
+
 
 
 
