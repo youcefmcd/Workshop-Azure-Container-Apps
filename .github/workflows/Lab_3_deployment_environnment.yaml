@@ -60,17 +60,19 @@ jobs:
             --resource-group ${{ env.RESOURCE_GROUP }} \
             --workspace-name ${{ env.LOG_ANALYTICS_NAME }} \
             --location ${{ env.LOCATION }}
-          LOG_ANALYTICS_WORKSPACE_CLIENT_ID=`az monitor log-analytics workspace show --query customerId -g ${{ env.RESOURCE_GROUP  }} -n ${{ env.LOG_ANALYTICS_NAME }} --out tsv`
+          LOG_ANALYTICS_WORKSPACE_CLIENT_ID=`az monitor log-analytics workspace show --query customerId -g ${{ env.RESOURCE_GROUP }} -n ${{ env.LOG_ANALYTICS_NAME }} --out tsv`
           LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY=`az monitor log-analytics workspace get-shared-keys --query primarySharedKey -g ${{ env.RESOURCE_GROUP }} -n ${{ env.LOG_ANALYTICS_NAME }} --out tsv`
+          echo $LOG_ANALYTICS_WORKSPACE_CLIENT_ID
+          echo $LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY
 
-      - name: Create environnment Azure Container Apps
-        run: |
-          az containerapp env create \
-            --name ${{ env.CONTAINERAPPS_ENVIRONMENT }} \
-            --resource-group ${{ env.RESOURCE_GROUP }} \
-            --location ${{ env.LOCATION }} \
-            --logs-workspace-id $LOG_ANALYTICS_WORKSPACE_CLIENT_ID \
-            --logs-workspace-key $LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY
+#      - name: Create environnment Azure Container Apps
+#        run: |
+#          az containerapp env create \
+#            --name ${{ env.CONTAINERAPPS_ENVIRONMENT }} \
+#            --resource-group ${{ env.RESOURCE_GROUP }} \
+#            --location ${{ env.LOCATION }} \
+#            --logs-workspace-id $LOG_ANALYTICS_WORKSPACE_CLIENT_ID \
+#            --logs-workspace-key $LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY
 
 #      - name: Create Azure Container Registry
 #        run: |
@@ -83,7 +85,7 @@ jobs:
 #        run: |
 #          az mysql server firewall-rule create \
 #            --resource-group $${{ env.RESOURCE_GROUP }} \
-#            --server-name ${{ secrets.DB_HOST_NAME }} \
+#            --server-name ${{ env.DB_HOST_NAME }} \
 #            --start-ip-address 0.0.0.0 \
 #            --end-ip-address 255.255.255.255 \
 #            --name allowip
@@ -91,16 +93,16 @@ jobs:
 #      - name: Create Data Base
 #        run: |
 #          az mysql db create \
-#            --name ${{ secrets.DB_NAME }} \
+#            --name ${{ env.DB_NAME }} \
 #            --resource-group ${{ env.RESOURCE_GROUP }} \
-#            --server-name ${{ secrets.DB_HOST_NAME }}
+#            --server-name ${{ env.DB_HOST_NAME }}
 #
 #      - name: Create Table
 #        uses: azure/mysql@093f3af08a63a1d99485a1d93d3771b684625875
 #        with:
-#          server-name: ${{ secrets.DB_HOST_NAME }}.mysql.database.azure.com
-#          username: ${{ secrets.DB_ADMIN }}@${{ secrets.DB_HOST_NAME }}
-#          password: ${{ secrets.DB_ADMIN_PASSWORD }}
-#          database: ${{ secrets.DB_NAME }}
+#          server-name: ${{ env.DB_HOST_NAME }}.mysql.database.azure.com
+#          username: ${{ env.DB_ADMIN }}@${{ env.DB_HOST_NAME }}
+#          password: ${{ env.DB_ADMIN_PASSWORD }}
+#          database: ${{ env.DB_NAME }}
 #          sql-file: './Lab_3/App/db/create_tables.sql'
 #
