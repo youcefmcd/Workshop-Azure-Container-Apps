@@ -38,5 +38,16 @@ jobs:
       - name: Creation du "Resource Group"
         run: |
           az group create \
-            --name $RESOURCE_GROUP \
-            --location $LOCATION    
+            --name ${{ env.RESOURCE_GROUP }} \
+            --location ${{ env.LOCATION }}
+
+      - name: Create MySQL Server
+        run: |
+          az mysql server create \
+            --location ${{ env.LOCATION }} \
+            --resource-group ${{ env.RESOURCE_GROUP }} \
+            --name ${{ env.DB_HOST_NAME }} \
+            --admin-user ${{ env.DB_ADMIN }} \
+            --admin-password ${{ env.DB_ADMIN_PASSWORD }} \
+            --sku-name GP_Gen5_2 \
+            --ssl-enforcement Disabled    
