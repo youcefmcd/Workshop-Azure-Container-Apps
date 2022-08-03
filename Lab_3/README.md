@@ -2,9 +2,15 @@
 ## Objectif:
 L'objectif de ce Lab 3 c'est de déployer une appliacation (en micro-services) dans le service "Azure Container Apps"
 
-## Préparation de l'environnement de déploiement des conteneurs
+## Préparation de l'environnement 
 
 ### Prérequis
+Service Principal<br>
+```
+az ad sp create-for-rbac --name "spnLab3" --role "Contributor" --scopes /subscriptions/45d70f51-2e63-4daa-8870-27e468ba9baa --sdk-aut -o jsonc
+```
+
+
 Enregistrer le provider<br>
 ``` 
 az provider register --namespace Microsoft.App

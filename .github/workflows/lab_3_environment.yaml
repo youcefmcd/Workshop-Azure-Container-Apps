@@ -1,0 +1,42 @@
+name: 0. Deployment environnment Lab_3
+
+on:
+  workflow_dispatch:
+
+
+env:
+  RESOURCE_GROUP: "RG-Lab3"
+  LOCATION: "eastus2"
+  CONTAINERAPPS_ENVIRONMENT: "lab3-environment"
+  LOG_ANALYTICS_NAME: "pierrc-workspace-lab"
+######################################################################################################################################################
+# Nous sommes dans un Workshop !
+# Toutes la informations liées à la base de données sont à mettre dans un coffre à secret dans les bonnes pratiques (service secrets, Keyvault, ...) 
+  DB_HOST_NAME: "Lab-3-DB"
+  DB_NAME: "rugby_api"
+  DB_ADMIN: "pierrc"
+  DB_ADMIN_PASSWORD: Password123$
+ ####################################################################################################################################################
+
+jobs:
+  Deployment-environnment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout du Repo
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+
+      - name: Login Azure
+        uses: azure/login@24848bc889cfc0a8313c2b3e378ac0d625b9bc16
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Installation du provider Microsoft.App
+        run: |
+          az provider register --namespace Microsoft.App
+
+      - name: Creation du "Resource Group"
+        run: |
+          az group create \
+            --name $RESOURCE_GROUP \
+            --location $LOCATION    
