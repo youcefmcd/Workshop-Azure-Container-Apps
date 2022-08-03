@@ -37,11 +37,11 @@ jobs:
           az provider register --namespace Microsoft.App
           az provider register --namespace Microsoft.OperationalInsights
 
-#      - name: Creation du "Resource Group"
-#        run: |
-#          az group create \
-#            --name ${{ env.RESOURCE_GROUP }} \
-#            --location ${{ env.LOCATION }}
+      - name: Creation du "Resource Group"
+        run: |
+          az group create \
+            --name ${{ env.RESOURCE_GROUP }} \
+            --location ${{ env.LOCATION }}
       #
       #      - name: Create MySQL Server
       #        run: |
