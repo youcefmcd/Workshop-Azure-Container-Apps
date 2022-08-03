@@ -19,7 +19,7 @@ Gardez cette structure:<br>
   "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 }
 ```
-Dans GitHub, allez dans le service secret<br>
+Dans GitHub, allez dans le service secret:<br>
 <img width='800' src='../images/Lab_3/Lab_3_00.png'/><br>
 
 
