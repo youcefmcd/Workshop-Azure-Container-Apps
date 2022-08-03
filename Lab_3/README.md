@@ -48,6 +48,8 @@ env:
   DB_ADMIN: "pierrc"
   DB_ADMIN_PASSWORD: Password123$       
 ```
+**Nous sommes dans un Workshop !**<br>
+**Toutes la informations liées à la base de données sont à mettre dans un coffre à secret dans les bonnes pratiques (service secrets GitHub, KeyVault, ...)**<br>
 
 
 
