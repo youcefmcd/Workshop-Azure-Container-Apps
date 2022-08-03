@@ -35,22 +35,22 @@ jobs:
         run: |
           az provider register --namespace Microsoft.App
 
-      - name: Creation du "Resource Group"
-        run: |
-          az group create \
-            --name ${{ env.RESOURCE_GROUP }} \
-            --location ${{ env.LOCATION }}
-
-      - name: Create MySQL Server
-        run: |
-          az mysql server create \
-            --location ${{ env.LOCATION }} \
-            --resource-group ${{ env.RESOURCE_GROUP }} \
-            --name ${{ env.DB_HOST_NAME }} \
-            --admin-user ${{ env.DB_ADMIN }} \
-            --admin-password ${{ env.DB_ADMIN_PASSWORD }} \
-            --sku-name GP_Gen5_2 \
-            --ssl-enforcement Disabled
+#      - name: Creation du "Resource Group"
+#        run: |
+#          az group create \
+#            --name ${{ env.RESOURCE_GROUP }} \
+#            --location ${{ env.LOCATION }}
+#
+#      - name: Create MySQL Server
+#        run: |
+#          az mysql server create \
+#            --location ${{ env.LOCATION }} \
+#            --resource-group ${{ env.RESOURCE_GROUP }} \
+#            --name ${{ env.DB_HOST_NAME }} \
+#            --admin-user ${{ env.DB_ADMIN }} \
+#            --admin-password ${{ env.DB_ADMIN_PASSWORD }} \
+#            --sku-name GP_Gen5_2 \
+#            --ssl-enforcement Disabled
 
       - name: Create Log Analytics Workspace
         run: 
@@ -58,17 +58,17 @@ jobs:
             --resource-group ${{ env.RESOURCE_GROUP }} \
             --workspace-name ${{ env.LOG_ANALYTICS_NAME }} \
             --location ${{ env.LOCATION }}
-          LOG_ANALYTICS_WORKSPACE_CLIENT_ID=`az monitor log-analytics workspace show --query customerId -g ${{ env.RESOURCE_GROUP  }} -n ${{ env.LOG_ANALYTICS_NAME }} --out tsv`
-          LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY=`az monitor log-analytics workspace get-shared-keys --query primarySharedKey -g ${{ env.RESOURCE_GROUP }} -n ${{ env.LOG_ANALYTICS_NAME }} --out tsv`
+#          LOG_ANALYTICS_WORKSPACE_CLIENT_ID=`az monitor log-analytics workspace show --query customerId -g ${{ env.RESOURCE_GROUP  }} -n ${{ env.LOG_ANALYTICS_NAME }} --out tsv`
+#          LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY=`az monitor log-analytics workspace get-shared-keys --query primarySharedKey -g ${{ env.RESOURCE_GROUP }} -n ${{ env.LOG_ANALYTICS_NAME }} --out tsv`
 
-      - name: Create environnment Azure Container Apps
-        run: |
-          az containerapp env create \
-            --name ${{ env.CONTAINERAPPS_ENVIRONMENT }} \
-            --resource-group ${{ env.RESOURCE_GROUP }} \
-            --location ${{ env.LOCATION }} \
-            --logs-workspace-id $LOG_ANALYTICS_WORKSPACE_CLIENT_ID \
-            --logs-workspace-key $LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY
+#      - name: Create environnment Azure Container Apps
+#        run: |
+#          az containerapp env create \
+#            --name ${{ env.CONTAINERAPPS_ENVIRONMENT }} \
+#            --resource-group ${{ env.RESOURCE_GROUP }} \
+#            --location ${{ env.LOCATION }} \
+#            --logs-workspace-id $LOG_ANALYTICS_WORKSPACE_CLIENT_ID \
+#            --logs-workspace-key $LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY
 
       - name: Create Azure Container Registry
         run: |
