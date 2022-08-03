@@ -9,14 +9,14 @@ env:
   CONTAINERAPPS_ENVIRONMENT: "lab3-environment"
   LOG_ANALYTICS_NAME: "pierrc-workspace-lab"
   ACR_NAME: "acrlab3xxx"
-######################################################################################################################################################
-# Nous sommes dans un Workshop !
-# Toutes la informations liées à la base de données sont à mettre dans un coffre à secret dans les bonnes pratiques (service secrets GitHub, Keyvault, ...) 
+  ######################################################################################################################################################
+  # Nous sommes dans un Workshop !
+  # Toutes la informations liées à la base de données sont à mettre dans un coffre à secret dans les bonnes pratiques (service secrets GitHub, Keyvault, ...)
   DB_HOST_NAME: "Lab-3-DB"
   DB_NAME: "rugby_api"
   DB_ADMIN: "pierrc"
   DB_ADMIN_PASSWORD: Password123$
- #####################################################################################################################################################
+  #####################################################################################################################################################
 
 jobs:
   Deployment-environnment:
@@ -35,29 +35,29 @@ jobs:
         run: |
           az provider register --namespace Microsoft.App
 
-#      - name: Creation du "Resource Group"
-#        run: |
-#          az group create \
-#            --name ${{ env.RESOURCE_GROUP }} \
-#            --location ${{ env.LOCATION }}
-#
-#      - name: Create MySQL Server
-#        run: |
-#          az mysql server create \
-#            --location ${{ env.LOCATION }} \
-#            --resource-group ${{ env.RESOURCE_GROUP }} \
-#            --name ${{ env.DB_HOST_NAME }} \
-#            --admin-user ${{ env.DB_ADMIN }} \
-#            --admin-password ${{ env.DB_ADMIN_PASSWORD }} \
-#            --sku-name GP_Gen5_2 \
-#            --ssl-enforcement Disabled
+      - name: Creation du "Resource Group"
+        run: |
+          az group create \
+            --name ${{ env.RESOURCE_GROUP }} \
+            --location ${{ env.LOCATION }}
+      #
+      #      - name: Create MySQL Server
+      #        run: |
+      #          az mysql server create \
+      #            --location ${{ env.LOCATION }} \
+      #            --resource-group ${{ env.RESOURCE_GROUP }} \
+      #            --name ${{ env.DB_HOST_NAME }} \
+      #            --admin-user ${{ env.DB_ADMIN }} \
+      #            --admin-password ${{ env.DB_ADMIN_PASSWORD }} \
+      #            --sku-name GP_Gen5_2 \
+      #            --ssl-enforcement Disabled
 
       - name: Create Log Analytics Workspace
-        run: 
-          az monitor log-analytics workspace create \
-            --resource-group ${{ env.RESOURCE_GROUP }} \
-            --workspace-name ${{ env.LOG_ANALYTICS_NAME }} \
-            --location ${{ env.LOCATION }}
+        run: |
+         az monitor log-analytics workspace create \
+          --resource-group ${{ env.RESOURCE_GROUP }} \
+          --workspace-name ${{ env.LOG_ANALYTICS_NAME }} \
+          --location ${{ env.LOCATION }}
 #          LOG_ANALYTICS_WORKSPACE_CLIENT_ID=`az monitor log-analytics workspace show --query customerId -g ${{ env.RESOURCE_GROUP  }} -n ${{ env.LOG_ANALYTICS_NAME }} --out tsv`
 #          LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY=`az monitor log-analytics workspace get-shared-keys --query primarySharedKey -g ${{ env.RESOURCE_GROUP }} -n ${{ env.LOG_ANALYTICS_NAME }} --out tsv`
 
@@ -100,5 +100,5 @@ jobs:
 #          username: ${{ secrets.DB_ADMIN }}@${{ secrets.DB_HOST_NAME }}
 #          password: ${{ secrets.DB_ADMIN_PASSWORD }}
 #          database: ${{ secrets.DB_NAME }}
-#          sql-file: './Lab_3/App/db/create_tables.sql'                
+#          sql-file: './Lab_3/App/db/create_tables.sql'
 #
