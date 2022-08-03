@@ -4,7 +4,7 @@ L'objectif de ce Lab 3 c'est de déployer une appliacation (en micro-services) d
 
 ## Préparation de l'environnement de déploiement des conteneurs
 
-# Prérequis
+### Prérequis
 Enregistrer le provider<br>
 ``` 
 az provider register --namespace Microsoft.App
