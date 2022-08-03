@@ -48,12 +48,18 @@ env:
   DB_ADMIN: "pierrc"
   DB_ADMIN_PASSWORD: Password123$       
 ```
-**Information**<br>
+**Informations importantes**<br>
 **Nous sommes dans un Workshop !**<br>
 **Toutes la informations liées à la base de données sont à mettre dans un coffre à secret dans les bonnes pratiques (service secrets GitHub, KeyVault, ...)**<br>
 
 Pour déclancher le workflow:<br>
 <img width='800' src='../images/Lab_3/Lab_3_03.png'/><br>
+Pour suivre l'exécution du workflows:<br>
+<img width='800' src='../images/Lab_3/Lab_3_04.png'/><br>
+<img width='800' src='../images/Lab_3/Lab_3_05.png'/><br>
+<img width='800' src='../images/Lab_3/Lab_3_06.png'/><br>
+<img width='800' src='../images/Lab_3/Lab_3_07.png'/><br>
+
 
 
 
