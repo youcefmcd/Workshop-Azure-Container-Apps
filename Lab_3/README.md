@@ -34,6 +34,8 @@ Le déploiement de l'environnement se fera avec un "Workflow Github" (Pipeline),
 - un "Log Analytics workspace"
 - un "Container Apps Environment"
 
+Le workflow est `.github/workflows/Lab_3_deployment_environnment.yaml`
+
 
 
 
