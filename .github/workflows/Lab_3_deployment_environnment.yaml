@@ -3,15 +3,15 @@ name: 0. Deployment environnment Lab_3
 on:
   workflow_dispatch:
 
-
 env:
   RESOURCE_GROUP: "RG-Lab3"
   LOCATION: "eastus2"
   CONTAINERAPPS_ENVIRONMENT: "lab3-environment"
   LOG_ANALYTICS_NAME: "pierrc-workspace-lab"
+  ACR_NAME: "acrlab3xxx"
 ######################################################################################################################################################
 # Nous sommes dans un Workshop !
-# Toutes la informations liées à la base de données sont à mettre dans un coffre à secret dans les bonnes pratiques (service secrets, Keyvault, ...) 
+# Toutes la informations liées à la base de données sont à mettre dans un coffre à secret dans les bonnes pratiques (service secrets GitHub, Keyvault, ...) 
   DB_HOST_NAME: "Lab-3-DB"
   DB_NAME: "rugby_api"
   DB_ADMIN: "pierrc"
@@ -50,4 +50,54 @@ jobs:
             --admin-user ${{ env.DB_ADMIN }} \
             --admin-password ${{ env.DB_ADMIN_PASSWORD }} \
             --sku-name GP_Gen5_2 \
-            --ssl-enforcement Disabled    
+            --ssl-enforcement Disabled
+
+      - name: Create Log Analytics Workspace
+        run: 
+          az monitor log-analytics workspace create \
+            --resource-group ${{ env.RESOURCE_GROUP }} \
+            --workspace-name ${{ env.LOG_ANALYTICS_NAME }} \
+            --location ${{ env.LOCATION }}
+          LOG_ANALYTICS_WORKSPACE_CLIENT_ID=`az monitor log-analytics workspace show --query customerId -g ${{ env.RESOURCE_GROUP  }} -n ${{ env.LOG_ANALYTICS_NAME }} --out tsv`
+          LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY=`az monitor log-analytics workspace get-shared-keys --query primarySharedKey -g ${{ env.RESOURCE_GROUP }} -n ${{ env.LOG_ANALYTICS_NAME }} --out tsv`
+
+      - name: Create environnment Azure Container Apps
+        run: |
+          az containerapp env create \
+            --name ${{ env.CONTAINERAPPS_ENVIRONMENT }} \
+            --resource-group ${{ env.RESOURCE_GROUP }} \
+            --location ${{ env.LOCATION }} \
+            --logs-workspace-id $LOG_ANALYTICS_WORKSPACE_CLIENT_ID \
+            --logs-workspace-key $LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY
+
+      - name: Create Azure Container Registry
+        run: |
+          az acr create \
+            --name ${{ env.ACR_NAME }} \
+            --resource-group ${{ env.RESOURCE_GROUP }} \
+            --sku basic
+
+      - name: Create firewall rule
+        run: |
+          az mysql server firewall-rule create \
+            --resource-group $${{ env.RESOURCE_GROUP }} \
+            --server-name ${{ secrets.DB_HOST_NAME }} \
+            --start-ip-address 0.0.0.0 \
+            --end-ip-address 255.255.255.255 \
+            --name allowip
+
+      - name: Create Data Base
+        run: |
+          az mysql db create \
+            --name ${{ secrets.DB_NAME }} \
+            --resource-group ${{ env.RESOURCE_GROUP }} \
+            --server-name ${{ secrets.DB_HOST_NAME }}
+
+      - name: Create Table
+        uses: azure/mysql@093f3af08a63a1d99485a1d93d3771b684625875
+        with:
+          server-name: ${{ secrets.DB_HOST_NAME }}.mysql.database.azure.com
+          username: ${{ secrets.DB_ADMIN }}@${{ secrets.DB_HOST_NAME }}
+          password: ${{ secrets.DB_ADMIN_PASSWORD }}
+          database: ${{ secrets.DB_NAME }}
+          sql-file: './Lab_3/App/db/create_tables.sql'                
