@@ -44,12 +44,16 @@ env:
   LOG_ANALYTICS_NAME: "pierrc-workspace-lab-3"
   ACR_NAME: "acrlab3xxx"
   DB_HOST_NAME: "DB-lab-3-xxx"
-  DB_NAME: "rugby_api"
+  DB_NAME: "rugby_api" # ne pas modifier
   DB_ADMIN: "pierrc"
   DB_ADMIN_PASSWORD: Password123$       
 ```
+**Information**<br>
 **Nous sommes dans un Workshop !**<br>
 **Toutes la informations liées à la base de données sont à mettre dans un coffre à secret dans les bonnes pratiques (service secrets GitHub, KeyVault, ...)**<br>
+
+Pour déclancher le workflow:<br>
+<img width='800' src='../images/Lab_3/Lab_3_03.png'/><br>
 
 
 
