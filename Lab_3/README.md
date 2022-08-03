@@ -21,6 +21,10 @@ Gardez cette structure:<br>
 ```
 Dans GitHub, allez dans le service secret:<br>
 <img width='800' src='../images/Lab_3/Lab_3_00.png'/><br>
+Dans le service secret, créez un secret "AZURE_CREDENTIALS"<br>
+Et mettez le "Service Principal" comme ci-dessous:<br>
+<img width='800' src='../images/Lab_3/Lab_3_01.png'/><br>
+
 
 
 
