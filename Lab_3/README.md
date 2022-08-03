@@ -56,8 +56,11 @@ Pour déclancher le workflow:<br>
 <img width='800' src='../images/Lab_3/Lab_3_03.png'/><br>
 Pour suivre l'exécution du workflows:<br>
 <img width='800' src='../images/Lab_3/Lab_3_04.png'/><br>
+<br>
 <img width='800' src='../images/Lab_3/Lab_3_05.png'/><br>
+<br>
 <img width='800' src='../images/Lab_3/Lab_3_06.png'/><br>
+<br>
 <img width='800' src='../images/Lab_3/Lab_3_07.png'/><br>
 
 
