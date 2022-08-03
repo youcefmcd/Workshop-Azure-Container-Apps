@@ -43,7 +43,7 @@ jobs:
             --name ${{ env.RESOURCE_GROUP }} \
             --location ${{ env.LOCATION }}
       
-      - name: Create MySQL Server
+      - name: Create "MySQL Server"
         run: |
           az mysql server create \
             --location ${{ env.LOCATION }} \
@@ -54,7 +54,7 @@ jobs:
             --sku-name GP_Gen5_2 \
             --ssl-enforcement Disabled
 
-      - name: Create Environnment Azure Container Apps 
+      - name: Create Environnment "Azure Container Apps" 
         run: |
           az monitor log-analytics workspace create \
             --resource-group ${{ env.RESOURCE_GROUP }} \
@@ -69,14 +69,14 @@ jobs:
             --logs-workspace-id $LOG_ANALYTICS_WORKSPACE_CLIENT_ID \
             --logs-workspace-key $LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY
 
-      - name: Create Azure Container Registry
+      - name: Create "Azure Container Registry"
         run: |
           az acr create \
             --name ${{ env.ACR_NAME }} \
             --resource-group ${{ env.RESOURCE_GROUP }} \
             --sku basic
 
-      - name: Create firewall rule
+      - name: Create "MySQL Server" firewall rule
         run: |
           az mysql server firewall-rule create \
             --resource-group ${{ env.RESOURCE_GROUP }} \
@@ -85,14 +85,14 @@ jobs:
             --end-ip-address 255.255.255.255 \
             --name allowip
 
-      - name: Create Data Base
+      - name: Create "Data Base"
         run: |
           az mysql db create \
             --name ${{ env.DB_NAME }} \
             --resource-group ${{ env.RESOURCE_GROUP }} \
             --server-name ${{ env.DB_HOST_NAME }}
 
-      - name: Create Table
+      - name: Create "Table"
         uses: azure/mysql@093f3af08a63a1d99485a1d93d3771b684625875
         with:
           server-name: ${{ env.DB_HOST_NAME }}.mysql.database.azure.com
