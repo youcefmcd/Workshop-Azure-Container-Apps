@@ -110,21 +110,16 @@ Résultat:<br>
 ```
 {"message":"API v.1.0.O"}
 ```
-**Vérification de l'application "api" avec la connexion à la base de donnér:**<br>
+**Vérification de l'application "api" avec la connexion à la base de donnée:**<br>
+Pour la table "table plaquage_ok<br>
 ```
 curl https://api.lemonriver-7b314584.eastus2.azurecontainerapps.io/plaquage-ok/get
 ```
-Résultat:<br>
+Résultat :<br>
 ```
 [{"Id":1,"sum_plaquage_ok":0}]
 ```
-```
-curl https://api.lemonriver-7b314584.eastus2.azurecontainerapps.io/plaquage-ko/get
-```
-Résultat:<br>
-```
-[{"Id":1,"sum_plaquage_ko":0}]
-```
+
 
 
 
