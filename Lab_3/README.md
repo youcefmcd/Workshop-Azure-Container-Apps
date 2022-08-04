@@ -143,8 +143,15 @@ Résultat:<br>
 api.bravesea-df4ca2c0.eastus2.azurecontainerapps.io
 ```
 Observez le fichier `./Lab_3/App/front/index.html`<br>
-Il faut remplacer `http://localhost:3000` par l'url de l'API<br>
-
+Il faut remplacer `http://localhost:3000` par l'url de l'API (quatre lignes)<br>
+ex: <br>
+```
+http://localhost:3000/plaquage-ok/get
+```
+en
+```
+https://api.bravesea-df4ca2c0.eastus2.azurecontainerapps.io/plaquage-ok/get
+```
   
 
 
