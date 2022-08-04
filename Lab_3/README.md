@@ -102,7 +102,14 @@ az containerapp create \
   --query configuration.ingress.fqdn
 ```
 
-
+**Vérification de l'application "api":**<br>
+```
+curl https://api.lemonriver-7b314584.eastus2.azurecontainerapps.io/
+```
+Résultats:<br>
+```
+{"message":"API v.1.0.O"}
+```
 
 
 
