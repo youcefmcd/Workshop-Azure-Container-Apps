@@ -86,7 +86,20 @@ En Azure Cli ou Cloud Shell:<br>
 ```
 cd ./Lab_3/App/api
 az acr build -t acrlab3xxx.azurecr.io/api:1.0.0 -r acrlab3xxx .
+```
 
+Déploiement de l'application "api":<br>
+```
+az containerapp create \
+  --name api \
+  --resource-group RG-Lab3 \
+  --environment environment-lab-3 \
+  --image acrlab3xxx.azurecr.io/api:1.0.0 \
+  --env-vars DB_HOST=db-lab-3-xxx.mysql.database.azure.com DB_USER=pierrc@db-lab-3-xxx DB_PASSWORD=Password123$ DB_DATABASE=rugby_api \
+  --target-port 3000 \
+  --ingress 'external' \
+  --registry-server acrlab3xxx.azurecr.io \
+  --query configuration.ingress.fqdn
 ```
 
 
