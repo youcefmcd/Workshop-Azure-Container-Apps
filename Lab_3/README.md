@@ -139,7 +139,13 @@ Test de l'url:<br>
 echo $URL_API
 ```
 Résultat:<br>
-`api.bravesea-df4ca2c0.eastus2.azurecontainerapps.io`
+```
+api.bravesea-df4ca2c0.eastus2.azurecontainerapps.io
+```
+Observez le fichier `./Lab_3/App/front/index.html`<br>
+Il faut remplacer `http://localhost:3000` par l'url de l'API<br>
+
+  
 
 
 
