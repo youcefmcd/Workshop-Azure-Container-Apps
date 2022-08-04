@@ -80,7 +80,7 @@ az containerapp env list -g RG-Lab3
 ```
 az acr list -g RG-Lab3
 ```
-## "Build and Push" Applications
+## "Build and Push" Applications & installation
 ### API
 En Azure Cli ou Cloud Shell:<br>
 ```
@@ -128,6 +128,20 @@ Résultat :<br>
 ```
 [{"Id":1,"sum_plaquage_ko":0}]
 ```
+
+### FRONT
+Récupération de l'url de l'api:<br>
+```
+URL_API=$(az containerapp show --resource-group RG-Lab3 --name api --query properties.configuration.ingress.fqdn -o tsv) 
+```
+Test de l'url:<br>
+```
+echo $URL_API
+```
+Résultat:<br>
+`api.bravesea-df4ca2c0.eastus2.azurecontainerapps.io`
+
+
 
 
 
