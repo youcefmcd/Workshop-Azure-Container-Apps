@@ -81,7 +81,7 @@ az containerapp env list -g RG-Lab3
 az acr list -g RG-Lab3
 ```
 ## "Build and Push" Applications
-# API
+### API
 En Azure Cli ou Cloud Shell:<br>
 ```
 cd ./Lab_3/App/api
