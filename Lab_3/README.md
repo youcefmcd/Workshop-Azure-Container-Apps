@@ -120,6 +120,16 @@ Résultat :<br>
 [{"Id":1,"sum_plaquage_ok":0}]
 ```
 
+Pour la table "table plaquage_ko<br>
+```
+curl https://api.lemonriver-7b314584.eastus2.azurecontainerapps.io/plaquage-ko/get
+```
+Résultat :<br>
+```
+[{"Id":1,"sum_plaquage_ko":0}]
+```
+
+
 
 
 
