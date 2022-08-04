@@ -74,7 +74,7 @@ jobs:
           az acr create \
             --name ${{ env.ACR_NAME }} \
             --resource-group ${{ env.RESOURCE_GROUP }} \
-            --admin-enabled true
+            --admin-enabled true \
             --sku basic
 
       - name: Create "MySQL Server" firewall rule
