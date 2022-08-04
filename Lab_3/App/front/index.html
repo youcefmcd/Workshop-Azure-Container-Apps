@@ -22,7 +22,7 @@
         <div style="position: absolute ; top: 3px; left: 250px; font-weight: bold; color: green; font-size: xx-large"
             id="plaquegeok">
             <script>
-                fetch('http://localhost:3000/plaquage-ok/get')
+                fetch('https://api.bravesea-df4ca2c0.eastus2.azurecontainerapps.io/plaquage-ok/get')
                     .then(res => res.json())
                     .then(data => {
                         console.log(data);
@@ -32,7 +32,7 @@
             <script>
                 jQuery(function ($) {
                     $('#btnplaquegeok').click(() => {
-                        let url = 'http://localhost:3000/plaquage-ok/add';
+                        let url = 'https://api.bravesea-df4ca2c0.eastus2.azurecontainerapps.io/plaquage-ok/add';
                         jQuery.ajax({
                             type: "POST",
                             url: url,
@@ -56,7 +56,7 @@
         <div style="position: absolute; top: 63px; left: 250px; font-weight: bold; color: red; font-size: xx-large;"
             id="plaquegeko">
             <script>
-                fetch('http://localhost:3000/plaquage-ko/get/')
+                fetch('https://api.bravesea-df4ca2c0.eastus2.azurecontainerapps.io/plaquage-ko/get/')
                     .then(res => res.json())
                     .then(data => {
                         document.querySelector('#plaquegeko').innerText = data[0].sum_plaquage_ko
@@ -65,7 +65,7 @@
             <script>
                 jQuery(function ($) {
                     $('#btnplaquegeko').click(() => {
-                        let url = 'http://localhost:3000/plaquage-ko/add';
+                        let url = 'https://api.bravesea-df4ca2c0.eastus2.azurecontainerapps.io/plaquage-ko/add';
                         jQuery.ajax({
                             type: "POST",
                             url: url,
@@ -89,7 +89,7 @@
             jQuery(function ($) {
                 $('#btnraz').click(() => {
                     console.log('click btnraz');
-                    let url = 'http://localhost:3000/plaquage-ok/reset';
+                    let url = 'https://api.bravesea-df4ca2c0.eastus2.azurecontainerapps.io/plaquage-ok/reset';
                     jQuery.ajax({
                         type: "POST",
                         url: url,
@@ -103,7 +103,7 @@
             jQuery(function ($) {
                 $('#btnraz').click(() => {
                     console.log('click btnraz');
-                    let url = 'http://localhost:3000/plaquage-ko/reset';
+                    let url = 'https://api.bravesea-df4ca2c0.eastus2.azurecontainerapps.io/plaquage-ko/reset';
                     jQuery.ajax({
                         type: "POST",
                         url: url,

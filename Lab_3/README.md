@@ -152,7 +152,16 @@ en
 ```
 https://api.bravesea-df4ca2c0.eastus2.azurecontainerapps.io/plaquage-ok/get
 ```
-  
+Pour le faire facilement, nous le ferons dans ce lab avec la commande `sed`
+```
+sed -i -e 's%\http://localhost:3000%https://'$URL_API'%' ./Lab_3/App/front/index.html
+```
+Vérifiez les changements.<br>
+**Buid & Push front**
+```
+cd ./Lab_3/App/front
+az acr build -t acrlab3xxx.azurecr.io/front:1.0.0 -r acrlab3xxx .
+```
 
 
 
