@@ -2,6 +2,7 @@
 ## Objectif:
 L'objectif de ce Lab 3 c'est de déployer une application (en micro-services) dans le service "Azure Container Apps"<br>
 Schéma<br>
+<img width='800' src='../images/Lab_3/Lab_3_00.png'/><br>
 ## Préparation de l'environnement 
 
 ### Prérequis
