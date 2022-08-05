@@ -1,7 +1,7 @@
 # Lab_3: Déploiement d’une application dans Azure Container Apps
 ## Objectif:
 L'objectif de ce Lab 3 c'est de déployer une application (en micro-services) dans le service "Azure Container Apps"<br>
-
+Schéma<br>
 ## Préparation de l'environnement 
 
 ### Prérequis
