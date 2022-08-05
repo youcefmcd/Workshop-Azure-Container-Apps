@@ -53,7 +53,7 @@ env:
 ```
 **Informations importantes !**<br>
 **Nous sommes dans un Workshop !**<br>
-**Dans les bonnes pratiques, toutes la informations liées à la base de données sont à mettre dans un service pour stocker les secrets (service secrets GitHub, KeyVault, ...)**<br>
+**Dans les bonnes pratiques, toutes la informations liées à la base de données sont à mettre dans un service pour stocker les secrets (ex: service secrets GitHub, KeyVault, ...)**<br>
 
 Pour déclancher le workflow:<br>
 <img width='800' src='../images/Lab_3/Lab_3_03.png'/><br>
