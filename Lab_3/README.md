@@ -38,7 +38,7 @@ Le  "Workflow Github" (Pipeline) déploie:<br>
 - un "Container Apps Environment"
 
 Le workflow est ici: `.github/workflows/Lab_3_deployment_environnment.yaml`<br>
-Paramatrez le bloc de variable du workflows, lignes 6 -> 18 <br>
+Paramatrez le bloc de variables du workflows, lignes 6 -> 18 <br>
 ```
 env:
   RESOURCE_GROUP: "RG-Lab3"
@@ -51,9 +51,9 @@ env:
   DB_ADMIN: "pierrc"
   DB_ADMIN_PASSWORD: Password123$       
 ```
-**Informations importantes**<br>
+**Informations importantes !**<br>
 **Nous sommes dans un Workshop !**<br>
-**Toutes la informations liées à la base de données sont à mettre dans un coffre à secret dans les bonnes pratiques (service secrets GitHub, KeyVault, ...)**<br>
+**Dans les bonnes pratiques, toutes la informations liées à la base de données sont à mettre dans un service pour stocker les secrets (service secrets GitHub, KeyVault, ...)**<br>
 
 Pour déclancher le workflow:<br>
 <img width='800' src='../images/Lab_3/Lab_3_03.png'/><br>
