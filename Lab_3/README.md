@@ -1,6 +1,8 @@
 # Lab_3: Déploiement d’une application dans Azure Container Apps
 ## Objectif:
-L'objectif de ce Lab 3 c'est de déployer une appliacation (en micro-services) dans le service "Azure Container Apps"
+L'objectif de ce Lab 3 c'est de déployer une application (en micro-services) dans le service "Azure Container Apps"<br>
+<img width='800' src='../images/Lab_3/Lab_3_00.png'/><br>
+
 
 ## Préparation de l'environnement 
 
@@ -161,6 +163,18 @@ Vérifiez les changements.<br>
 ```
 cd ./Lab_3/App/front
 az acr build -t acrlab3xxx.azurecr.io/front:1.0.0 -r acrlab3xxx .
+```
+**Déploiement de l'application Front**
+```
+az containerapp create \
+  --name front \
+  --resource-group RG-Lab3 \
+  --environment environment-lab-3 \
+  --image acrlab3xxx.azurecr.io/front:1.0.0 \
+  --target-port 80 \
+  --ingress 'external' \
+  --registry-server acrlab3xxx.azurecr.io \
+  --query configuration.ingress.fqdn
 ```
 
 
