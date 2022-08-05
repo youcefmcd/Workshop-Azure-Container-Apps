@@ -1,5 +1,5 @@
 # Lab_3: Déploiement d’une application dans Azure Container Apps
-<img width='800' src='../images/Lab_3/Lab_3_00.png'/><br>
+<img width='800' src='../images/Lab_3/Lab_3_08.png'/><br>
 ## Objectif:
 L'objectif de ce Lab 3 c'est de déployer une application (en micro-services) dans le service "Azure Container Apps"<br>
 
