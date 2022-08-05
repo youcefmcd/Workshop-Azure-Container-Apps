@@ -90,6 +90,16 @@ En Azure Cli ou Cloud Shell:<br>
 cd ./Lab_3/App/api
 az acr build -t acrlab3xxx.azurecr.io/api:1.0.0 -r acrlab3xxx .
 ```
+Vérification de l'image:<br>
+```
+az acr repository list --name acrlab3xxx -o table
+```
+Résultat:<br>
+```
+Result
+--------
+api
+```
 
 Déploiement de l'application "api":<br>
 ```
