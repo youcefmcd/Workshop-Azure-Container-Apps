@@ -7,6 +7,7 @@ L'objectif de ce Lab 3 c'est de déployer une application (en micro-services) da
 ## Préparation de l'environnement 
 
 ### Prérequis
+Le déploiement de l'environnement se fera avec un "Workflow Github" (Pipeline).<br>
 Créez un Service Principal Azure Cli ou Cloud Shell:<br>
 ```
 az ad sp create-for-rbac --name "mySPN" --role "Contributor" --scopes /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx --sdk-aut -o jsonc
@@ -28,7 +29,7 @@ Et mettez le "Service Principal" comme ci-dessous:<br>
 <img width='800' src='../images/Lab_3/Lab_3_01.png'/><br>
 
 ### Déploiement de l'environnement
-Le déploiement de l'environnement se fera avec un "Workflow Github" (Pipeline), il déploiera:<br>
+Le  "Workflow Github" (Pipeline) déploie:<br>
 - un "resource group"
 - un service "Azure Database for MySQL single server"
 - une base de donnée + 2 tables + règle de pare-feu
