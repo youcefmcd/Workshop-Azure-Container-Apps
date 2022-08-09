@@ -193,5 +193,5 @@ Lancez votre navigateur et collez l'URL:<br>
 
 ## Fin du Lab_3
 ```
-az groupe delete --location eastus2 --resource-group RG-Lab3
+az group delete --resource-group RG-Lab3
 ```
