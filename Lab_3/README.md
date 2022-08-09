@@ -188,10 +188,10 @@ az containerapp create \
   --query configuration.ingress.fqdn
 ```
 Récupérez l'URL en la copiant (ex: https://front.wittyocean-a4b650e9.eastus2.azurecontainerapps.io/)<br>
-Lancez votre navigateur et collez l'URL<br>
+Lancez votre navigateur et collez l'URL:<br>
 <img width='800' src='../images/Lab_3/Lab_3_09.png'/><br>
 
 ## Fin du Lab_3
 ```
-az groupe delete --nane RG-Lab3
+az groupe delete --location eastus2 --resource-group RG-Lab3
 ```
