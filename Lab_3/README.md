@@ -108,9 +108,10 @@ az containerapp create \
   --resource-group RG-Lab3 \
   --environment environment-lab-3 \
   --image acrlab3xxx.azurecr.io/api:1.0.0 \
-  --env-vars DB_HOST=db-lab-3-xxx.mysql.database.azure.com DB_USER=pierrc@db-lab-3-xxx DB_PASSWORD=Password123$ DB_DATABASE=rugby_api \
+  --secrets secret-db-host=db-lab-3-xxx.mysql.database.azure.com secret-db-user=pierrc@db-lab-3-xxx secret-db-password=Password123$ secret-db-database=rugby_api \
+  --env-vars DB_HOST=secretref:secret-db-host DB_USER=secretref:secret-db-user DB_PASSWORD=secretref:secret-db-password DB_DATABASE=secretref:secret-db-database \
   --target-port 3000 \
-  --ingress 'external' \
+  --ingress external \
   --registry-server acrlab3xxx.azurecr.io \
   --query configuration.ingress.fqdn
 ```
