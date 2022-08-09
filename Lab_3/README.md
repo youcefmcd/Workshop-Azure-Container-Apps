@@ -121,7 +121,7 @@ curl https://api.lemonriver-7b314584.eastus2.azurecontainerapps.io/
 ```
 Résultat:<br>
 ```
-{"message":"API v.1.0.O"}
+{"message":"API v.1.0.0"}
 ```
 **Vérification de l'application "api" avec la connexion à la base de donnée:**<br>
 Pour la table "table plaquage_ok<br>
@@ -187,18 +187,11 @@ az containerapp create \
   --registry-server acrlab3xxx.azurecr.io \
   --query configuration.ingress.fqdn
 ```
+Récupérez l'URL en la copiant (ex: https://front.wittyocean-a4b650e9.eastus2.azurecontainerapps.io/)<br>
+Lancez votre navigateur et collez l'URL<br>
+<img width='800' src='../images/Lab_3/Lab_3_09.png'/><br>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Fin du Lab_3
+```
+az groupe delete --nane RG-Lab3
+```
