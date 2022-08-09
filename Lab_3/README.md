@@ -100,7 +100,6 @@ Result
 --------
 api
 ```
-
 Déploiement de l'application "api":<br>
 ```
 az containerapp create \
