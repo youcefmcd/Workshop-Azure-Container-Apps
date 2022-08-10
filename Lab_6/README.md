@@ -70,4 +70,4 @@ A la fin de l'installation:<br>
 Container app created. Access your app at https://hello.kinddune-d6b77287.eastus2.azurecontainerapps.io/
 ```
 Test de l'application:<br>
-Faire curl sur l'URL ex: `curl https://hello.kinddune-d6b77287.eastus2.azurecontainerapps.io` 
+Faire un "curl" sur l'URL ex: `curl https://hello.kinddune-d6b77287.eastus2.azurecontainerapps.io` 
