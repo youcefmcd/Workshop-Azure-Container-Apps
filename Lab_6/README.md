@@ -11,6 +11,7 @@ LOCATION="eastus2"
 ACR_NAME="acrlab6"
 LOG_ANALYTICS_NAME="pierrc-workspace-lab-6"
 CONTAINERAPPS_ENVIRONMENT="environment-lab-6"
+APLLICATION="Hello"
 
 ```
 Installation de l'environnement:<br>
@@ -43,3 +44,13 @@ az containerapp env create \
   --logs-workspace-id $LOG_ANALYTICS_WORKSPACE_CLIENT_ID \
   --logs-workspace-key $LOG_ANALYTICS_WORKSPACE_PRIMARY_KEY
 ```
+
+## "Build & Push" l'application
+
+```
+cd ./Lab_6/App
+az acr build -t ${ACR_NAME}.azurecr.io/${APLLICATION}:1.0.0 -r ${ACR_NAME} .
+```
+
+## Déploiement de l'application
+
