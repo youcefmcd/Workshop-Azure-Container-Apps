@@ -11,7 +11,7 @@ LOCATION="eastus2"
 ACR_NAME="acrlab6"
 LOG_ANALYTICS_NAME="pierrc-workspace-lab-6"
 CONTAINERAPPS_ENVIRONMENT="environment-lab-6"
-APLLICATION="Hello"
+APLLICATION="hello"
 
 ```
 Installation de l'environnement:<br>
