@@ -12,5 +12,5 @@ Workshop 1 journée sur Azure Container Apps
 -   [Lab 3](/Lab_3/README.md) : Déploiement d’une application
 -   [Lab 4](/Lab_4/README.md) : Montée de version et trafic « spliting » d’une application (Blue Green & Canary)
 -   [Lab 5](/Lab_5/README.md) : Monitoring d’une application
--   Lab 6 : Pipeline CD
+-   [Lab 6](/Lab_6/README.md) : Pipeline CD
 -   Synthèse et tour de table
