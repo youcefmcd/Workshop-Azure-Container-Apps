@@ -1,7 +1,7 @@
 # Lab_6: Pipeline CD
 <img width='800' src='../images/Lab_6/Lab_6_00.png'/><br>
 ## Objectif:
-L'objectif de ce Lab 6 c'est de ...<br>
+L'objectif de ce Lab 6 c'est d'utiliser les actions GitHub pour publier les révisions de votre application de conteneur. Au fur et à mesure que les commits sont poussés vers votre dépôt GitHub, une action GitHub est déclenchée et met à jour l'image du conteneur dans le registre des conteneurs. Une fois le conteneur mis à jour dans le registre, Azure Container Apps crée une nouvelle révision basée sur l'image de conteneur mise à jour.
 
 ## Prération de l'environnement
 Affectation des variables:<br>
