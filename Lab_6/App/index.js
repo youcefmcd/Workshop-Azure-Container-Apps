@@ -8,8 +8,8 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 });
 
-app.listen(80, () => {
-    console.log('app listening on port 80!');
+app.listen(3000, () => {
+    console.log('app listening on port 3000!');
 });
 
 

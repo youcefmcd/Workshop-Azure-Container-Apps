@@ -13,6 +13,7 @@ LOG_ANALYTICS_NAME="pierrc-workspace-lab-6"
 CONTAINERAPPS_ENVIRONMENT="environment-lab-6"
 APLLICATION="hello"
 
+
 ```
 Installation de l'environnement:<br>
 ```
@@ -53,4 +54,20 @@ az acr build -t ${ACR_NAME}.azurecr.io/${APLLICATION}:1.0.0 -r ${ACR_NAME} .
 ```
 
 ## Déploiement de l'application
-
+```
+az containerapp create \
+  --name ${APLLICATION} \
+  --resource-group ${RESOURCE_GROUP} \
+  --environment ${CONTAINERAPPS_ENVIRONMENT} \
+  --image ${ACR_NAME}.azurecr.io/${APLLICATION}:1.0.0 \
+  --target-port 3000 \
+  --ingress external \
+  --registry-server ${ACR_NAME}.azurecr.io \
+  --query configuration.ingress.fqdn
+```
+A la fin de l'installation:<br>
+```
+Container app created. Access your app at https://hello.kinddune-d6b77287.eastus2.azurecontainerapps.io/
+```
+Test de l'application:<br>
+Faire curl sur l'URL ex: `curl https://hello.kinddune-d6b77287.eastus2.azurecontainerapps.io` 
