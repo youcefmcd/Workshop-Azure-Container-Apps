@@ -71,3 +71,40 @@ Container app created. Access your app at https://hello.kinddune-d6b77287.eastus
 ```
 Test de l'application:<br>
 Faire un "curl" sur l'URL ex: `curl https://hello.kinddune-d6b77287.eastus2.azurecontainerapps.io` 
+
+## Mise en place du "Continous deployment"
+Dans la console Azure:<br>
+<img width='800' src='../images/Lab_6/Lab_6_01.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_02.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_03.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_04.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_05.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_06.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_06.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_07.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_08.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_09.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_10.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_11.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_12.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_13.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_14.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_02.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_15.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_16.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_17.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_18.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_19.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_20.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_21.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_22.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_23.png'/><br>
+<img width='800' src='../images/Lab_6/Lab_6_24.png'/><br>
+
+
+
+
+
+
+
+
