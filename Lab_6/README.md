@@ -147,6 +147,8 @@ Suite du Workflows(ci-dessus):<br>
 Ci-dessus on voit l'image de l'application avec un tag qui correspond au SHA-1 du commit
 <br><br>
 <img width='800' src='../images/Lab_6/Lab_6_02.png'/><br>
+En paramètrant le "Continous Deployment" l'application n'a pas été modifiée, une nouvelle révision a été créée mais avec la même version (v1)
+<br><br> 
 <img width='800' src='../images/Lab_6/Lab_6_15.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_16.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_17.png'/><br>
