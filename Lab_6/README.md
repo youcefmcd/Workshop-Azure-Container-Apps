@@ -105,7 +105,7 @@ Service principal setting:
 
 <img width='800' src='../images/Lab_6/Lab_6_06.png'/><br>
 
-Github<brÒ>
+Github<br>
 <img width='800' src='../images/Lab_6/Lab_6_07.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_08.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_09.png'/><br>
