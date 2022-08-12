@@ -144,7 +144,7 @@ Suite du Workflows(ci-dessus):<br>
 
 
 <img width='800' src='../images/Lab_6/Lab_6_14.png'/><br>
-Ci-dessus on voit l'image de l'application avec un tag qui correspond au SHA-1 du commit <br>
+Ci-dessus on voit l'image de l'application avec un tag qui correspond au SHA-1 du commit
 <br><br>
 <img width='800' src='../images/Lab_6/Lab_6_02.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_15.png'/><br>
