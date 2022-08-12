@@ -108,7 +108,8 @@ Service principal setting:
 <br><br>
 Sur la partie GitHub:<br>
 <img width='800' src='../images/Lab_6/Lab_6_08.png'/><br>
-Un Workflow a été généré automatiquement et ce dernier s'exécute automatiquement 
+Un Workflow a été généré automatiquement et ce dernier s'exécute automatiquement
+<br><br> 
 <img width='800' src='../images/Lab_6/Lab_6_09.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_10.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_11.png'/><br>
