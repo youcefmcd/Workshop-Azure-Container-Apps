@@ -77,6 +77,8 @@ Dans la console Azure:<br>
 <img width='800' src='../images/Lab_6/Lab_6_01.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_02.png'/><br>
 Nous avons ici notre premiere version<br><br>
+
+**Paramétrage du "Continous deployment"**
 <img width='800' src='../images/Lab_6/Lab_6_03.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_04.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_05.png'/><br>
