@@ -156,7 +156,7 @@ Allez modifier le fichier ./Lab_6/App/index.html<br>
 Ligne 21 changez v1 en v2<br>
 
 <img width='800' src='../images/Lab_6/Lab_6_15.png'/><br>
-Commentaire de commit par exemple mettre "my v2"
+Commentaire de commit par exemple mettre "my v2" (ci-dessous)
 <br><br>
 <img width='800' src='../images/Lab_6/Lab_6_16.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_17.png'/><br>
