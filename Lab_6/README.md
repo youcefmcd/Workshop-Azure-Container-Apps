@@ -111,6 +111,11 @@ Sur la partie GitHub:<br>
 Un Workflow a été généré automatiquement et ce dernier s'exécute automatiquement
 <br><br> 
 <img width='800' src='../images/Lab_6/Lab_6_09.png'/><br>
+Avec deux jobs:<br>
+
+- Build
+- Deploy
+
 <img width='800' src='../images/Lab_6/Lab_6_10.png'/><br>
 Trois secrets ont été créés:<br>
 
