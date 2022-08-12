@@ -162,13 +162,26 @@ Commentaire de commit par exemple mettre "my v2" (ci-dessous)
 Le workflow se déclenche automatiquement(ci-dessous)<br>
 <img width='800' src='../images/Lab_6/Lab_6_17.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_18.png'/><br>
-Dans la console Azure :<br>
+Dans la console Azure (ci-dessous) :<br>
+
+- Dans la Container App allez dans "Revision management"
+- Sélectionnez "Multiple Several revisions active simultaneously"
+- Save et Refresh (plusieurs fois ...)
+
+On peut apercevoir trois révisions :
+
+- une révision du premier deploiement (la v1 de l'application)
+- une révision du deploiement lors du paramétrage du "Continous deployment" (la v1 de l'application)
+- une révision avec le changement de la version de l'application
+
+
 <img width='800' src='../images/Lab_6/Lab_6_19.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_20.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_21.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_22.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_23.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_24.png'/><br>
+Pour finir on peut apercevoir une nouvelle image qui a été générée
 
 
 
