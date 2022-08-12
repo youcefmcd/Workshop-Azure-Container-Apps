@@ -89,7 +89,6 @@ Au niveau de cet assistant, on renseigne:<br>
 - ID de votre tenant<br><br>
 
 <img width='800' src='../images/Lab_6/Lab_6_06.png'/><br>
-<img width='800' src='../images/Lab_6/Lab_6_06.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_07.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_08.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_09.png'/><br>
