@@ -84,6 +84,21 @@ Nous avons ici notre premiere version<br><br>
 Au niveau de cet assistant, on donne les droits nécessaires au service "Azure Container Apps" dans votre Compte ou Organisation GitHub<br><br> 
 <img width='800' src='../images/Lab_6/Lab_6_05.png'/><br>
 Au niveau de cet assistant, on renseigne:<br>
+Github:
+
+- Organization GitHub -> Compte GitHub
+- Repository -> Workshop-Azure-Container-Apps
+- Branch -> main
+
+Registry setting:
+
+- Sélectionnez "Azure Container Registry"
+- Allez chercher l' "Azure Container Registry" qui a été déployé lors de la préparation de l'environnement
+- Sélectionnez l'image qui été construite lors de la préparation de l'environnement
+- Mettre le chemin du Dockerfile de l'application
+
+Service principal setting:
+
 - ID du SPN (créé lors du Lab 3)
 - le secret du SPN
 - ID de votre tenant<br><br>
