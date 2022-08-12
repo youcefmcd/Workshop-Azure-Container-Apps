@@ -183,6 +183,8 @@ On peut apercevoir trois révisions :
 <img width='800' src='../images/Lab_6/Lab_6_24.png'/><br>
 Pour finir on peut apercevoir une nouvelle image qui a été générée
 
+## Fin du Lab
+
 
 
 
