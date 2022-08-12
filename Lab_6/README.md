@@ -130,6 +130,7 @@ Au niveau du Workflows(ci-dessus):<br>
 - Le workflow utilise l'action 'docker/build-push-action@v2' (https://github.com/docker/build-push-action) (ligne 34-40)
 
 <img width='800' src='../images/Lab_6/Lab_6_13.png'/><br>
+Suite du Workflows(ci-dessus):<br>
 <img width='800' src='../images/Lab_6/Lab_6_14.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_02.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_15.png'/><br>
