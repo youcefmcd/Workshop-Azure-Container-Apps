@@ -120,7 +120,7 @@ Avec deux jobs:<br>
 Trois secrets ont été créés:<br>
 
 - HELLO_AZURE_CREDENTIALS (donne les droits à GitHub sur l'abonnement/Ressource (SPN))
-- HELLO_AZURE_REGISTRY_PASSWORD (mot de passe de ACR pour le "build" de l'application)
+- HELLO_AZURE_REGISTRY_PASSWORD (mot de passe de ACR pour le "Push" de l'application)
 - HELLO_AZURE_REGISTRY_USERNAME (Registry name)
 <br><br>
 <img width='800' src='../images/Lab_6/Lab_6_11.png'/><br>
