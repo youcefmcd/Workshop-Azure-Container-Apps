@@ -125,9 +125,9 @@ Au niveau du Workflows(ci-dessus):<br>
 - Le workflow ce déclenche sur un push sur la branche "main" dans le path de l'application ou une modification du workflows (ligne 4 à 11)
 - Le workflow peut également se déclencher manuellement (ligne 14)
 - Le workflow s'éxecute sur un "Runner GitHub" sur un OS Ubuntu LTS-20.04.4 (ligne 17 à 18)
-- Le workflow utilise l'action 'docker/setup-buildx-action@v1' (https://github.com/docker/setup-buildx-action)
-- Le workflow utilise l'action 'docker/login-action@v1' (https://github.com/marketplace/actions/docker-login)
-- Le workflow utilise l'action 'docker/build-push-action@v2' (https://github.com/docker/build-push-action)
+- Le workflow utilise l'action 'docker/setup-buildx-action@v1' (https://github.com/docker/setup-buildx-action) (ligne 24-25)
+- Le workflow utilise l'action 'docker/login-action@v1' (https://github.com/marketplace/actions/docker-login) (ligne 27-32)
+- Le workflow utilise l'action 'docker/build-push-action@v2' (https://github.com/docker/build-push-action) (ligne 34-40)
 
 <img width='800' src='../images/Lab_6/Lab_6_13.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_14.png'/><br>
