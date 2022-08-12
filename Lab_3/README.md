@@ -56,6 +56,7 @@ env:
 **Dans les bonnes pratiques, toutes la informations liées à la base de données sont à mettre dans un service pour stocker les secrets (ex: service secrets GitHub, KeyVault, ...)**<br>
 
 Pour déclancher le workflow:<br>
+<img width='800' src='../images/Lab_3/Lab_3_03bis.png'/><br>
 <img width='800' src='../images/Lab_3/Lab_3_03.png'/><br>
 Pour suivre l'exécution du workflows:<br>
 <img width='800' src='../images/Lab_3/Lab_3_04.png'/><br>
