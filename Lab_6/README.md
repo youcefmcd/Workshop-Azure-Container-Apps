@@ -120,10 +120,12 @@ Trois secrets ont été créés:<br>
 <br><br>
 <img width='800' src='../images/Lab_6/Lab_6_11.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_12.png'/><br>
-Au niveau du Workflows:<br>
+Au niveau du Workflows(ci-dessus):<br>
 
 - Le workflow ce déclenche sur un push sur la branche "main" dans le path de l'application ou une modification du workflows (ligne 4 à 11)
 - il peut également ce éclencher manuellement (ligne 14)
+- Le workflow s'éxecute sur un "Runner GitHub" sur un OS Ubuntu (LTS-20.04.4) 
+
 <img width='800' src='../images/Lab_6/Lab_6_13.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_14.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_02.png'/><br>
