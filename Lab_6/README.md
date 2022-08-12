@@ -154,7 +154,7 @@ En paramètrant le "Continous Deployment" l'application n'a pas été modifiée,
 Dans la console GitHub (ci-dessous):<br>
 Allez modifier le fichier ./Lab_6/App/index.html<br>
 Ligne 21 changez v1 en v2<br>
-
+<br><br>
 <img width='800' src='../images/Lab_6/Lab_6_15.png'/><br>
 Commentaire de commit par exemple mettre "my v2" (ci-dessous)
 <br><br>
