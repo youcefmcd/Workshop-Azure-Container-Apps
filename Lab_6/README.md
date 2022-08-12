@@ -138,7 +138,7 @@ Au niveau du Workflows(ci-dessus):<br>
 Suite du Workflows(ci-dessus):<br>
 
 - Le job "Deploy" s'éxecute sur un "Runner GitHub" sur un OS Ubuntu LTS-20.04.4 (ligne 44) 
-- Le job "Deploy" s'éxecute une fois que le job "build" se termine (ligne 45 )
+- Le job "Deploy" s'éxecute une fois que le job "build" se termine sans erreur (ligne 45 )
 - Le job "Deploy" utilise l'action 'azure/login@v1' (https://github.com/Azure/login) (ligne 48-51)
 - Le job "Deploy" utilise l'action 'azure/CLI@v1' (https://github.com/marketplace/actions/azure-cli-action) (ligne 54-60)
 
