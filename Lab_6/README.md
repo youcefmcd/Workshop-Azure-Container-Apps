@@ -87,7 +87,7 @@ Au niveau de cet assistant, on renseigne:<br>
 - ID du SPN (créé lors du Lab 3)
 - le secret du SPN
 - ID de votre tenant
-
+<br><br>
 <img width='800' src='../images/Lab_6/Lab_6_06.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_06.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_07.png'/><br>
