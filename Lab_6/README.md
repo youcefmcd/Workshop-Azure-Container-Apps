@@ -123,7 +123,7 @@ Trois secrets ont été créés:<br>
 Au niveau du Workflows(ci-dessus):<br>
 
 - Le workflow ce déclenche sur un push sur la branche "main" dans le path de l'application ou une modification du workflows (ligne 4 à 11)
-- il peut également ce éclencher manuellement (ligne 14)
+- il peut également se déclencher manuellement (ligne 14)
 - Le workflow s'éxecute sur un "Runner GitHub" sur un OS Ubuntu LTS-20.04.4 (ligne 17 à 18)
 -  
 
