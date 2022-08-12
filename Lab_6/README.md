@@ -93,7 +93,7 @@ Github:
 Registry setting:
 
 - Sélectionnez "Azure Container Registry"
-- Allez chercher l' "Azure Container Registry" qui a été déployé lors de la préparation de l'environnement
+- Allez chercher l' "Azure Container Registry" qui a été déployée lors de la préparation de l'environnement
 - Sélectionnez l'image qui été construite lors de la préparation de l'environnement
 - Mettre le chemin du Dockerfile de l'application
 
@@ -105,6 +105,8 @@ Service principal setting:
 
 <img width='800' src='../images/Lab_6/Lab_6_06.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_07.png'/><br>
+
+**GitHub**
 <img width='800' src='../images/Lab_6/Lab_6_08.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_09.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_10.png'/><br>
