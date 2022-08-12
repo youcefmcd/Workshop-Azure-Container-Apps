@@ -158,7 +158,7 @@ Ligne 21 changez v1 en v2<br>
 Commentaire de commit par exemple mettre "my v2" (ci-dessous)
 <br><br>
 <img width='800' src='../images/Lab_6/Lab_6_16.png'/><br>
-Le workflow se déclenche automatiquement<br>
+Le workflow se déclenche automatiquement(ci-dessous)<br>
 <img width='800' src='../images/Lab_6/Lab_6_17.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_18.png'/><br>
 <img width='800' src='../images/Lab_6/Lab_6_19.png'/><br>
