@@ -14,4 +14,5 @@ Workshop 1 journée sur Azure Container Apps
 -   [Lab 5](/Lab_5/README.md) : Monitoring d’une application
 -   [Lab 6](/Lab_6/README.md) : Pipeline CD
 -   [Lab 7](/Lab_7/README.md) : Utilisation avancée avec export, modification et importation de fichier YAML
+-   [Lab 8](/Lab_8/README.md) : Utilisation de stockage persistant 
 -   Synthèse et tour de table
