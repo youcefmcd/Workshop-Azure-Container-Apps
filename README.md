@@ -15,4 +15,5 @@ Workshop 1 journée sur Azure Container Apps
 -   [Lab 6](/Lab_6/README.md) : Pipeline CD
 -   [Lab 7](/Lab_7/README.md) : Utilisation avancée avec export, modification et importation de fichier YAML
 -   [Lab 8](/Lab_8/README.md) : Utilisation de stockage persistant 
+-   [Lab 9](/Lab_9/README.md) : Nom de domaine DNS personnalisé et SSL
 -   Synthèse et tour de table
