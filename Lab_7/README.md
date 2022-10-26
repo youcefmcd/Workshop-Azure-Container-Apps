@@ -106,7 +106,7 @@ az acr import \
   --image podinfo:latest
 ```
 
-## Déployer l'application dans Azure Container Apps
+## Déploiement de l'application podinfo dans Azure Container Apps
 
 ```bash
 az containerapp create \
@@ -162,7 +162,7 @@ az containerapp update \
 
 Vérification de la configuration
 
-<img width='1024' src='../images/Lab_7/Lab7-1.png'/><br>
+<img width='1024' src='../images/Lab_7/Lab7-2.png'/><br>
 
 ## Ajout de Heath probes 
 
@@ -182,19 +182,19 @@ Informations complémentaires :
 Ajout d'un liveness probe via le portail Azure :
 Aller dans la Container App --> Application --> Containers/
 
-<img width='1024' src='../images/Lab_7/Lab7-2.png'/><br>
+<img width='1024' src='../images/Lab_7/Lab7-4.png'/><br>
 
 Cliquer sur **Edit and Deploy**
 
 Dans Container image, cliquer sur my-container-app
 
-<img width='1024' src='../images/Lab_7/Lab7-3.png'/><br>
+<img width='1024' src='../images/Lab_7/Lab7-5.png'/><br>
 
 Puis dans le panneau de droite, cliquer sur Health probes.
 
 Définir un liveness probe
 
-<img width='1024' src='../images/Lab_7/Lab7-4.png'/><br>
+<img width='1024' src='../images/Lab_7/Lab7-1.png'/><br>
 
 Puis cliquer sur Save.
 
