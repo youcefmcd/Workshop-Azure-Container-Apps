@@ -182,13 +182,13 @@ Informations complémentaires :
 Ajout d'un liveness probe via le portail Azure :
 Aller dans la Container App --> Application --> Containers/
 
-<img width='1024' src='../images/Lab_7/Lab7-4.png'/><br>
+<img width='1024' src='../images/Lab_7/Lab7-3.png'/><br>
 
 Cliquer sur **Edit and Deploy**
 
 Dans Container image, cliquer sur my-container-app
 
-<img width='1024' src='../images/Lab_7/Lab7-5.png'/><br>
+<img width='1024' src='../images/Lab_7/Lab7-4.png'/><br>
 
 Puis dans le panneau de droite, cliquer sur Health probes.
 
