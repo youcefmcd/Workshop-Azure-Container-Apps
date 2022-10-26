@@ -162,7 +162,7 @@ az containerapp update \
 
 Vérification de la configuration
 
-![[Pasted image 20221025144325.png]]
+<img width='1024' src='../images/Lab_7/Lab7-1.png'/><br>
 
 ## Ajout de Heath probes 
 
@@ -182,19 +182,19 @@ Informations complémentaires :
 Ajout d'un liveness probe via le portail Azure :
 Aller dans la Container App --> Application --> Containers/
 
-![[Pasted image 20221026095537.png]]
+<img width='1024' src='../images/Lab_7/Lab7-2.png'/><br>
 
 Cliquer sur **Edit and Deploy**
 
 Dans Container image, cliquer sur my-container-app
 
-![[Pasted image 20221026095711.png]]
+<img width='1024' src='../images/Lab_7/Lab7-3.png'/><br>
 
 Puis dans le panneau de droite, cliquer sur Health probes.
 
 Définir un liveness probe
 
-![[Pasted image 20221025144001.png]]
+<img width='1024' src='../images/Lab_7/Lab7-4.png'/><br>
 
 Puis cliquer sur Save.
 
@@ -212,11 +212,11 @@ Exécuter la commande suivante pour voir la modification effectuée dans le fich
 
 Le Readiness Probe se configure pour cette application avec les paramètres suivants :
 
-![[Pasted image 20221026100639.png]]
+<img width='1024' src='../images/Lab_7/Lab7-5.png'/><br>
 
 Ce qui correspond dans le YAML :
 
-![[Pasted image 20221026103004.png]]
+<img width='1024' src='../images/Lab_7/Lab7-6.png'/><br>
 
 Détail des options de az containerapp update
 https://learn.microsoft.com/en-us/cli/azure/containerapp?view=azure-cli-latest#az-containerapp-up
