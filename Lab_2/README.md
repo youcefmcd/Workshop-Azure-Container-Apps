@@ -3,9 +3,9 @@
 tags: #azure #azurecontainerapps #azurecli #cli 
 
 ## Objectif:
-L'objectif de ce Lab 2, c'est de déployer une Container App via Azure CLI.
+L'objectif de ce Lab 2, c'est de construire des images de conteneurs pour une application qui sera déployée une Container App via Azure CLI.
 
-L'application sera disponible en 2 versions ce qui permettra de tester les révisions dans Azure Container Apps
+L'application sera disponible en 2 versions (il y aura 2 images de conteneurs distinctes) ce qui permettra de tester les révisions et le trafic splitting dans Azure Container Apps (lors du Lab 4) 
 
 
 ## Pré-requis sur le poste d'administration
