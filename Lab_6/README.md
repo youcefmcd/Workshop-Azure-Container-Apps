@@ -3,7 +3,7 @@
 ## Objectif:
 L'objectif de ce Lab 6, c'est d'utiliser les "GitHub Actions" pour publier les révisions d'une application de conteneur. Au fur et à mesure que les "commits" sont poussés vers le dépôt GitHub, une "GitHub Actions" est déclenchée et met à jour l'image du conteneur dans "l'Azure Container Registry". Une fois le conteneur mis à jour dans cette dernière, Azure Container Apps crée une nouvelle révision basée sur l'image de conteneur mise à jour.
 
-## Prération de l'environnement
+## Préparation de l'environnement
 Affectation des variables:<br>
 ```
 RESOURCE_GROUP="RG-Lab6"
@@ -11,7 +11,7 @@ LOCATION="eastus2"
 ACR_NAME="acrlab6"
 LOG_ANALYTICS_NAME="pierrc-workspace-lab-6"
 CONTAINERAPPS_ENVIRONMENT="environment-lab-6"
-APLLICATION="hello"
+APPLICATION="hello"
 
 
 ```
@@ -50,16 +50,16 @@ az containerapp env create \
 
 ```
 cd ./Lab_6/App
-az acr build -t ${ACR_NAME}.azurecr.io/${APLLICATION}:1.0.0 -r ${ACR_NAME} .
+az acr build -t ${ACR_NAME}.azurecr.io/${APPLICATION}:1.0.0 -r ${ACR_NAME} .
 ```
 
 ## Déploiement de l'application
 ```
 az containerapp create \
-  --name ${APLLICATION} \
+  --name ${APPLICATION} \
   --resource-group ${RESOURCE_GROUP} \
   --environment ${CONTAINERAPPS_ENVIRONMENT} \
-  --image ${ACR_NAME}.azurecr.io/${APLLICATION}:1.0.0 \
+  --image ${ACR_NAME}.azurecr.io/${APPLICATION}:1.0.0 \
   --target-port 3000 \
   --ingress external \
   --registry-server ${ACR_NAME}.azurecr.io \
