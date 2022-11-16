@@ -31,7 +31,7 @@ az provider register --namespace Microsoft.App
 az provider show --namespace Microsoft.App
 ```
 
-### Affectation des variables
+### Affectation des variables  (REMPLACER La valeur de LOG_ANALYTICS_NAME par la votre)
 
 ```bash
 RESOURCE_GROUP="RG-Lab2"
@@ -105,7 +105,7 @@ Ouvrir un navigateur Web et saisir le FQDN renvoyé par la commande précédente
 
 ### Création d'une Azure Container Registry
 
-Affecter les variables
+Affecter les variables (REMPLACER La valeur de ACR_NAME par la votre)
 
 ```bash
 ACR_NAME="stanacr2022"  
