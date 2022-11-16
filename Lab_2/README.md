@@ -12,7 +12,7 @@ L'application sera disponible en 2 versions (il y aura 2 images de conteneurs di
 - Un abonnement Azure avec les privilèges d'administration (idéalement owner)
 - Un environnement Shell sous Bash
 - Azure CLI 2.37 or >: [https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) 
-- avoir cloné ce repository GitHub
+- Avoir cloné ce repository GitHub
 
 Les opérations sont réalisables depuis l'Azure Cloud Shell (Bash Shell) : https://shell.azure.com --> attention à bien cloner ce repo GitHub dans votre cloud Shell
 
