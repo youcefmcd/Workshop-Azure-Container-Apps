@@ -16,6 +16,8 @@ L'application sera disponible en 2 versions (il y aura 2 images de conteneurs di
 
 Les opérations sont réalisables depuis l'Azure Cloud Shell (Bash Shell) : https://shell.azure.com --> attention à bien cloner ce repo GitHub dans votre cloud Shell
 
+Attention : l'Azure Cloud Shell est un environnement avec certaines limitations: [https://learn.microsoft.com/en-us/azure/cloud-shell/limitations] (https://learn.microsoft.com/en-us/azure/cloud-shell/limitations)
+
 ## Préparation de l'environnement de déploiement des conteneurs
 
 Aller dans le répertoire du Lab2
