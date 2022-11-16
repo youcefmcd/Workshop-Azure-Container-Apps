@@ -86,8 +86,10 @@ Plus d'informations sur cette commande : https://docs.microsoft.com/en-us/cli/az
 ## Création d'une container app depuis une image exemple dans la Microsoft Container Registry
 
 ```bash
+CONTAINERAPPS_NAME="stan-container-app"
+
 az containerapp create \
-  --name my-container-app \
+  --name $CONTAINERAPPS_NAME \
   --resource-group $RESOURCE_GROUP \
   --environment $CONTAINERAPPS_ENVIRONMENT \
   --image mcr.microsoft.com/azuredocs/containerapps-helloworld:latest \
