@@ -125,7 +125,7 @@ Ajoutez une référence aux volumes de stockage à la définition du modèle.<br
 template:
   volumes:
   - name: azure-file-volume
-    storageName: acastorageaccountlab8
+    storageName: acastoragemount
     storageType: AzureFile
 ```
 Ajouter une section volumeMounts au conteneur nginx dans la section containers<br>
