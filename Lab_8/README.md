@@ -186,6 +186,14 @@ Allez dans la console Azure<br>
 Visualisation du point de montage (/var/log/nginx)<br>
 <img width='800' src='../images/Lab_8/Lab8-2.png'/><br>
 
+Fin du Lab<br>
+```
+az group delete \
+  --name $RESOURCE_GROUP \
+  --yes
+```
+
+
 
 
 
