@@ -1,9 +1,16 @@
 # Lab_8: Utilisation de stockage persistant
 
 ## Objectif:
-L'objectif de ce Lab 8, c'est de déployer une Container Apps avec un point de montage SMB avec "Azure Files storage"<br>
+Les applications qui s’exécutent dans "Azure Container Apps" peuvent avoir besoin de stocker et de récupérer des données. Bien que certaines charges de travail d’applications puissent utiliser un stockage local et rapide sur des nœuds superflus et vides, d’autres nécessitent un stockage qui persiste sur des volumes de données plus réguliers au sein de la plateforme Azure.<br>
+L'objectif de ce Lab 8, c'est de déployer une Container Apps avec un point de montage SMB avec "Azure Files storage"
 
 #### Etapes:<br>
+- Création d'un "resource group"
+- Création d'un "environmment"
+- Création d'un "storage account"
+- Création d'un "Azure Files Share"
+- Création d'un point de montage SMB
+- modification et importation d'une fichier YAML de configuration
 Pour cet exercice voici les variables:<br>
 ```
 RESOURCE_GROUP="RG_Lab_8"
@@ -12,7 +19,7 @@ LOCATION="westeurope"
 STORAGE_ACCOUNT_NAME="acastorageaccountlab8"
 STORAGE_SHARE_NAME="acafileshare00"
 STORAGE_MOUNT_NAME="acastoragemount"
-CONTAINER_APP_NAME="my-container-app"
+CONTAINER_APP_NAME="nginx-container-app"
 ```
 
 Création du "Resource Group"<br>
@@ -61,8 +68,21 @@ az containerapp env storage set \
   --azure-file-share-name $STORAGE_SHARE_NAME \
   --storage-name $STORAGE_MOUNT_NAME \
   --name $ENVIRONMENT_NAME \
-  --resource-group $RESOURCE_GROUP \
-  --output table
+  --resource-group $RESOURCE_GROUP
  ```
-  
+Création de l' "Azure Container App"<br>
+```
+az containerapp create \
+  --name $CONTAINER_APP_NAME \
+  --resource-group $RESOURCE_GROUP \
+  --environment $ENVIRONMENT_NAME \
+  --image nginx \
+  --min-replicas 1 \
+  --max-replicas 1 \
+  --target-port 80 \
+  --ingress external \
+  --query properties.configuration.ingress.fqdn
+```
+
+
 
