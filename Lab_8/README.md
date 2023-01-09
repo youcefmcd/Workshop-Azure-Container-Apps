@@ -28,7 +28,7 @@ az group create \
   --name $RESOURCE_GROUP \
   --location $LOCATION
 ```
-test
+test -> Création du "Resource Group":
 ```
 az group show --resource-group $RESOURCE_GROUP -o table
 ```
@@ -40,7 +40,7 @@ az containerapp env create \
   --logs-destination none \
   --location $LOCATION
 ```
-test
+test -> Création de l'environnement "Azure Container App":
 ```
 az containerapp env show --resource-group $RESOURCE_GROUP --name $ENVIRONMENT_NAME -o table
 ```
@@ -54,7 +54,7 @@ az storage account create \
   --sku Standard_LRS \
   --enable-large-file-share
 ```
-test
+test -> Création du "storage account":
 ```
 az storage account show --name $STORAGE_ACCOUNT_NAME -o table
 ``` 
@@ -67,7 +67,7 @@ az storage share-rm create \
   --quota 1024 \
   --enabled-protocols SMB
 ```
-test
+test -> Création du "File Share"
 ```
 az storage share-rm show --name $STORAGE_SHARE_NAME --storage-account $STORAGE_ACCOUNT_NAME -o table
 ```
@@ -76,7 +76,7 @@ Récupération de la première "Access Key"<br>
 ```
 STORAGE_ACCOUNT_KEY=`az storage account keys list -n $STORAGE_ACCOUNT_NAME --query "[0].value" -o tsv`
 ```
-test
+test -> Récupération de la première "Access Key"
 ```
 echo $STORAGE_ACCOUNT_KEY
 ```
@@ -91,7 +91,7 @@ az containerapp env storage set \
   --name $ENVIRONMENT_NAME \
   --resource-group $RESOURCE_GROUP
  ```
- test
+test -> Création du point de montage SMB:
 ```
 az containerapp env storage show --resource-group $RESOURCE_GROUP --storage-name $STORAGE_MOUNT_NAME --name $ENVIRONMENT_NAME -o table
 ```
@@ -108,7 +108,7 @@ az containerapp create \
   --ingress external \
   --query properties.configuration.ingress.fqdn
 ```
-test
+test -> Création de l' "Azure Container App"
 ```
 curl de l'ouput
 ex: curl https://nginx-container-app.happypond-923e93a4.westeurope.azurecontainerapps.io/
@@ -138,6 +138,8 @@ containers:
     - volumeName: azure-file-volume
       mountPath: /var/log/nginx
 ```
+le fichier doit resssembler : <br>
+<img width='800' src='../images/Lab_8/Lab8-1.png'/><br> 
 
 
 
