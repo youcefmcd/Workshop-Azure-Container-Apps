@@ -21,7 +21,6 @@ STORAGE_SHARE_NAME="acafileshare00"
 STORAGE_MOUNT_NAME="acastoragemount"
 CONTAINER_APP_NAME="nginx-container-app"
 ```
-
 Création du "Resource Group"<br>
 ```
 az group create \
@@ -110,7 +109,7 @@ az containerapp create \
 ```
 test -> Création de l' "Azure Container App"
 ```
-curl de l'ouput
+curl de l'output
 ex: curl https://nginx-container-app.happypond-923e93a4.westeurope.azurecontainerapps.io/
 ```
 Export du fichier de YAML de configuration<br>
@@ -138,8 +137,61 @@ containers:
     - volumeName: azure-file-volume
       mountPath: /var/log/nginx
 ```
-le fichier doit resssembler : <br>
-<img width='800' src='../images/Lab_8/Lab8-1.png'/><br> 
+le fichier doit resssembler à cet exemple ci-dessous: <br>
+<img width='800' src='../images/Lab_8/Lab8-1.png'/><br>
+Appliquez le fichier YAML de configuration
+```
+az containerapp update \
+  --name $CONTAINER_APP_NAME \
+  --resource-group $RESOURCE_GROUP \
+  --yaml app.yaml \
+  --output table
+```
+Vérification et tests <br>
+Test -> Azure Container App<br>
+```
+curl de l'output
+ex: curl https://nginx-container-app.happypond-923e93a4.westeurope.azurecontainerapps.io/
+```
+Connexion au conteneur<br>
+```
+az containerapp exec --name $CONTAINER_APP_NAME --resource-group $RESOURCE_GROUP
+```
+Une fois connecté au conteneur<br>
+```
+cd /var/log/nginx
+```
+```
+ls
+access.log  error.log
+```
+```
+cat access.log
+10.250.0.144 - - [09/Jan/2023:15:20:07 +0000] "GET / HTTP/1.1" 200 615 "-" "python-requests/2.26.0" "51.144.40.94"
+10.250.0.144 - - [09/Jan/2023:15:26:17 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/7.86.0" "51.144.40.94"
+10.250.0.91 - - [09/Jan/2023:15:26:19 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/7.86.0" "51.144.40.94"
+10.250.0.56 - - [09/Jan/2023:15:26:20 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/7.86.0" "51.144.40.94"
+10.250.0.144 - - [09/Jan/2023:15:26:20 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/7.86.0" "51.144.40.94"
+10.250.0.91 - - [09/Jan/2023:15:26:21 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/7.86.0" "51.144.40.94"
+10.250.0.144 - - [09/Jan/2023:15:28:13 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/7.86.0" "51.144.40.94"
+10.250.0.91 - - [09/Jan/2023:15:28:15 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/7.86.0" "51.144.40.94"
+10.250.0.56 - - [09/Jan/2023:15:28:15 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/7.86.0" "51.144.40.94"
+10.250.0.144 - - [09/Jan/2023:15:28:16 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/7.86.0" "51.144.40.94"
+10.250.0.91 - - [09/Jan/2023:15:28:16 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/7.86.0" "51.144.40.94"
+10.250.0.56 - - [09/Jan/2023:15:28:17 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/7.86.0" "51.144.40.94"
+10.250.0.144 - - [09/Jan/2023:15:28:17 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/7.86.0" "51.144.40.94"
+10.250.0.144 - - [09/Jan/2023:15:32:38 +0000] "GET / HTTP/1.1" 200 615 "-" "python-requests/2.26.0" "51.144.40.94"
+```
+Allez dans la console Azure<br>
+Visualisation du point de montage (/var/log/nginx)<br>
+<img width='800' src='../images/Lab_8/Lab8-2.png'/><br>
+
+
+
+
+
+ 
+
 
 
 
