@@ -1,5 +1,5 @@
 # Lab_8: Utilisation de stockage persistant
-
+<img width='800' src='../images/Lab_8/Lab8-0.png'/><br>
 ## Objectif:
 Les applications qui s’exécutent dans "Azure Container Apps" peuvent avoir besoin de stocker et de récupérer des données. Bien que certaines charges de travail d’applications puissent utiliser un stockage local et rapide sur des nœuds, d’autres nécessitent un stockage persistant sur des volumes de données au sein de la plateforme Azure.<br>
 L'objectif de ce Lab 8, c'est de déployer une Container Apps avec un point de montage SMB avec "Azure Files storage"
