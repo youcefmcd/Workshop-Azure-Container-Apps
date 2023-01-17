@@ -10,7 +10,7 @@ L'objectif de ce Lab 8, c'est de déployer une Container Apps avec un point de m
 - Création d'un "storage account"
 - Création d'un "Azure Files Share"
 - Création d'un point de montage SMB
-- modification et importation d'une fichier YAML de configuration<br><br>
+- modification et importation du fichier YAML de configuration<br><br>
 Pour cet exercice voici les variables:<br>
 ```
 RESOURCE_GROUP="RG_Lab_8"
