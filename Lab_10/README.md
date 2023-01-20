@@ -7,12 +7,22 @@ Ils existe deux niveaux accessibilité:
 |Interne|Lorsqu'il est défini comme interne, l'environnement n'a pas de point de terminaison public. Les environnements internes sont déployés avec une IP virtuelle (VIP) mappée sur une adresse IP interne. Le point de terminaison interne est un équilibreur de charge interne Azure (ILB) et les adresses IP proviennent de la liste d'adresses IP privées du VNET personnalisé.|
 ## Objectif:
 L'objectif de ce Lab 10, c'est de déployer une Azure Container App dans un environnement privé (interne) dans un Vnet.<br>
+Etapes pour ce Lab_10:<br>
+- Création d'un "Resource Group"
+- Création d'un "Virtual Network & Subnet"
+- Création de "Container Apps environment with the VNET and subnet"
+- Création et paramétrage d'un "private DNS"
+- Création d'une "Azure Container App"
+- Test dans l'environnement privé
+
+
 Voici les variables:<br>
 ```
 RESOURCE_GROUP="RG_Lab_010"
 ENVIRONMENT_NAME="Lab-010-env"
 LOCATION="westeurope"
 VNET_NAME="Lab-010-vnet"
+CONTAINER_APP_NAME="nginx-container-app"
 ```
 Création du "Resource Group"<br>
 ```
@@ -70,3 +80,75 @@ az containerapp env create \
   --infrastructure-subnet-resource-id $INFRASTRUCTURE_SUBNET \
   --internal-only
 ```
+test et visualisation de "Container Apps environment with the VNET and subnet"
+```
+az containerapp env list --resource-group $RESOURCE_GROUP -o jsonc
+```
+Création d'un "private DNS":<br>
+Récupération du default domaine de "Container Apps environment"
+```
+ENVIRONMENT_DEFAULT_DOMAIN=`az containerapp env show \
+                              --name $ENVIRONMENT_NAME \
+                              --resource-group $RESOURCE_GROUP \
+                              --query properties.defaultDomain --out json | tr -d '"'`
+```
+Récupération de l'IP de "Container Apps environment"
+```
+ENVIRONMENT_STATIC_IP=`az containerapp env show \
+                         --name $ENVIRONMENT_NAME \
+                         --resource-group $RESOURCE_GROUP \
+                         --query properties.staticIp --out json | tr -d '"'`
+```
+Récupération de l'id du Vnet
+```
+VNET_ID=`az network vnet show \
+           --resource-group $RESOURCE_GROUP \
+           --name $VNET_NAME \
+           --query id --out json | tr -d '"'`
+```
+Tests -> defaul domain / IP de "Container Apps environment" / id du Vnet
+```
+echo $ENVIRONMENT_DEFAULT_DOMAIN
+echo $ENVIRONMENT_STATIC_IP
+echo $VNET_ID
+```
+Création d'un "private DNS":<br>
+```
+az network private-dns zone create \
+  --resource-group $RESOURCE_GROUP \
+  --name $ENVIRONMENT_DEFAULT_DOMAIN
+```
+Link du Vnet dans le "private DNS"
+```
+az network private-dns link vnet create \
+  --resource-group $RESOURCE_GROUP \
+  --name $VNET_NAME \
+  --virtual-network $VNET_ID \
+  --zone-name $ENVIRONMENT_DEFAULT_DOMAIN -e true
+```
+Ajout de l'enregistrement * pour la rediction sur l'ip de "Container Apps environment"
+```
+az network private-dns record-set a add-record \
+  --resource-group $RESOURCE_GROUP \
+  --record-set-name "*" \
+  --ipv4-address $ENVIRONMENT_STATIC_IP \
+  --zone-name $ENVIRONMENT_DEFAULT_DOMAIN
+```
+Création de l'Azure Container App
+```
+az containerapp create \
+  --name $CONTAINER_APP_NAME \
+  --resource-group $RESOURCE_GROUP \
+  --environment $ENVIRONMENT_NAME \
+  --image nginx \
+  --min-replicas 1 \
+  --max-replicas 1 \
+  --target-port 80 \
+  --ingress internal \
+  --query properties.configuration.ingress.fqdn
+```
+Observer l'output de l'url ex:<br>
+```
+https://nginx-container-app.internal.redgrass-62acd462.westeurope.azurecontainerapps.io/
+```
+
