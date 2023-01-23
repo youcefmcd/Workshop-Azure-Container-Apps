@@ -75,7 +75,7 @@ Création de "Container Apps environment with the VNET and subnet":<br>
 az containerapp env create \
   --name $ENVIRONMENT_NAME \
   --resource-group $RESOURCE_GROUP \
-  --location "$LOCATION" \
+  --location $LOCATION \
   --logs-destination none
   --infrastructure-subnet-resource-id $INFRASTRUCTURE_SUBNET \
   --internal-only
@@ -147,7 +147,7 @@ az containerapp create \
   --ingress internal \
   --query properties.configuration.ingress.fqdn
 ```
-Observer l'output de l'url ex:<br>
+Observez l'output de l'url ex:<br>
 ```
 https://nginx-container-app.internal.redgrass-62acd462.westeurope.azurecontainerapps.io/
 ```
