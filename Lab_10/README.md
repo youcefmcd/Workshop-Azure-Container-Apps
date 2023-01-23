@@ -159,7 +159,13 @@ az containerapp create \
   --query properties.configuration.ingress.fqdn
 ```
 Observez l'output de l'url ex:<br>
+Essayez
 ```
-https://nginx-container-app.internal.redgrass-62acd462.westeurope.azurecontainerapps.io/
+curl https://nginx-container-app.internal.salmonsea-4a6c9171.westeurope.azurecontainerapps.io
+curl: (6) Could not resolve host: nginx-container-app.internal.salmonsea-4a6c9171.westeurope.azurecontainerapps.io
 ```
+
+
+
+
 
