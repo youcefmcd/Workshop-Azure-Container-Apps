@@ -76,7 +76,7 @@ az containerapp env create \
   --name $ENVIRONMENT_NAME \
   --resource-group $RESOURCE_GROUP \
   --location $LOCATION \
-  --logs-destination none
+  --logs-destination none \
   --infrastructure-subnet-resource-id $INFRASTRUCTURE_SUBNET \
   --internal-only
 ```
