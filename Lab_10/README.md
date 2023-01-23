@@ -134,7 +134,18 @@ az network private-dns record-set a add-record \
   --ipv4-address $ENVIRONMENT_STATIC_IP \
   --zone-name $ENVIRONMENT_DEFAULT_DOMAIN
 ```
-Création de l'Azure Container App
+Avant de déployer l'Azure Container App, quelques vérifications:<br>
+```
+az containerapp env list --resource-group $RESOURCE_GROUP -o jsonc
+```
+<img width='800' src='../images/Lab_10/Lab_10_1.png'/><br>
+Le "provisioningState" doit être "Succeeded"<br>
+Notez le suffix du "defaultDomain"
+<img width='800' src='../images/Lab_10/Lab_10_2.png'/><br>
+Un nouveau "Resource group" doit être déployé (ex: MC_NOM_DU_SUFFIX_DEFAULT_DOMAIN_.......)
+<img width='800' src='../images/Lab_10/Lab_10_3.png'/><br>
+On doit avoir au mois trois "aks-agentpool-......."<br>
+Création de l'Azure Container App:
 ```
 az containerapp create \
   --name $CONTAINER_APP_NAME \
