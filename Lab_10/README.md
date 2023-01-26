@@ -18,11 +18,21 @@ Etapes pour ce Lab_10:<br>
 
 Voici les variables:<br>
 ```
-RESOURCE_GROUP="RG_Lab_010"
-ENVIRONMENT_NAME="Lab-010-env"
+RESOURCE_GROUP="RG_Lab_10"
+ENVIRONMENT_NAME="Lab-10-env"
 LOCATION="westeurope"
-VNET_NAME="Lab-010-vnet"
+VNET_NAME="Lab-10-vnet"
+PREFIX_VNET="10.0.0.0/16"
+SUBNET_ACA_NAME="aca-Subnet"
+PREFIX_SUBNET_ACA_NAME="10.0.0.0/21"
+SUBNET_VM_NAME="vm-test-Subnet"
+PREFIX_SUBNET_VM_TEST="10.0.8.0/24"
+PUBLIC_IP_VM="PublicIP-VM"
+NSG="NSG-VM-TEST"
 CONTAINER_APP_NAME="nginx-container-app"
+USER_NAME="azureuser"
+PASSWORD_USER="Password123$"
+VM="VM-TEST"
 ```
 Création du "Resource Group"<br>
 ```
@@ -40,7 +50,7 @@ az network vnet create \
   --resource-group $RESOURCE_GROUP \
   --name $VNET_NAME \
   --location $LOCATION \
-  --address-prefix 10.0.0.0/16
+  --address-prefix $PREFIX_VNET
 ```
 test -> Création du "Virtual Network":
 ```
@@ -51,19 +61,19 @@ Création du "Subnet"<br>
 az network vnet subnet create \
   --resource-group $RESOURCE_GROUP \
   --vnet-name $VNET_NAME \
-  --name infrastructure-subnet \
-  --address-prefixes 10.0.0.0/21
+  --name $SUBNET_ACA_NAME \
+  --address-prefixes $PREFIX_SUBNET_ACA_NAME
 ```
 test -> Création du "subnet":<br>
 ```
-az network vnet subnet show --resource-group $RESOURCE_GROUP   --vnet-name $VNET_NAME --name infrastructure-subnet -o table
+az network vnet subnet show --resource-group $RESOURCE_GROUP   --vnet-name $VNET_NAME --name $SUBNET_ACA_NAME -o table
 ```
 Récupération des informations de l'id du subnet:
 ```
 INFRASTRUCTURE_SUBNET=`az network vnet subnet show \
                          --resource-group $RESOURCE_GROUP \
                          --vnet-name $VNET_NAME \
-                         --name infrastructure-subnet \
+                         --name $SUBNET_ACA_NAME \
                          --query "id" -o tsv | tr -d '[:space:]'`
 ```
 test -> Récupération des informations de l'id du subnet
@@ -155,17 +165,69 @@ az containerapp create \
   --min-replicas 1 \
   --max-replicas 1 \
   --target-port 80 \
-  --ingress internal \
+  --ingress external \
   --query properties.configuration.ingress.fqdn
 ```
-Observez l'output de l'url ex:<br>
+Observez l'output de l'url <br>
 Essayez
 ```
-curl https://nginx-container-app.internal.salmonsea-4a6c9171.westeurope.azurecontainerapps.io
-curl: (6) Could not resolve host: nginx-container-app.internal.salmonsea-4a6c9171.westeurope.azurecontainerapps.io
+curl https://nginx-container-app.proudglacier-77985e33.westeurope.azurecontainerapps.io/
+curl: (6) Could not resolve host: nginx-container-app.proudglacier-77985e33.westeurope.azurecontainerapps.io
+```
+Normal, nous sommes dans un environnement "privé", pour nos tests, nous allons déployer une VM dans le subnet "vm-test-Subnet"<br>
+Création de la VM de test <br>
 ```
 
+az network vnet subnet create \
+  --resource-group $RESOURCE_GROUP \
+  --vnet-name $VNET_NAME \
+  --name $SUBNET_VM_NAME \
+  --address-prefixes $PREFIX_SUBNET_VM_TEST
 
+az network public-ip create \
+    --resource-group $RESOURCE_GROUP \
+    --name $PUBLIC_IP_VM \
+    --sku Standard
 
+az network nsg create \
+    --resource-group $RESOURCE_GROUP \
+    --name $NSG
 
+az network nsg rule create \
+    --resource-group $RESOURCE_GROUP \
+    --nsg-name $NSG \
+    --name Rule_SSH \
+    --protocol tcp \
+    --priority 1000 \
+    --destination-port-range 22 \
+    --access allow
 
+az network nic create \
+    --resource-group $RESOURCE_GROUP \
+    --name Nic001 \
+    --vnet-name $VNET_NAME \
+    --subnet $SUBNET_VM_NAME \
+    --public-ip-address $PUBLIC_IP_VM\
+    --network-security-group $NSG
+
+az vm create \
+    --resource-group $RESOURCE_GROUP \
+    --name $VM \
+    --location $LOCATION \
+    --nics Nic001 \
+    --image UbuntuLTS \
+    --admin-username $USER_NAME \
+    --admin-password $PASSWORD_USER
+```
+Récupérer l'"publicIpAddress" <br>
+Connectez vous à la VM de test (mdp:Password123!):<br>
+```
+ssh azureuser@<PULICIP>
+```
+Dans la VM de test, refaire un curl de l'URL de l'Azure Container App. Ex:<br>
+curl https://nginx-container-app.purplerock-adf3f498.westeurope.azurecontainerapps.io
+``
+Fin du Lab_10
+```
+az group delete --resource-group $RESOURCE_GROUP --yes
+```
