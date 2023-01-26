@@ -1,5 +1,5 @@
 # Lab_10: Environnement privé
-<img width='800' src='../images/Lab_10/Lab_10_0.png'/>
+<img width='800' src='../images/Lab_10/Lab_10_0.png'/><br>
 Azure Container Apps s'exécute dans le contexte d'un environnement, qui est pris en charge par un réseau virtuel (VNET).Lorsque vous créez un environnement, vous pouvez fournir un VNET personnalisé, sinon un VNET est automatiquement généré pour vous. Les VNET générés vous sont inaccessibles car ils sont créés dans le locataire de Microsoft. Pour avoir un contrôle total sur votre VNET, fournissez un VNET existant à Container Apps lorsque vous créez votre environnement.<br>
 Ils existe deux niveaux accessibilité:
 |Niveau d’accessibilité|Description                                          |
