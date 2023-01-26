@@ -1,4 +1,5 @@
 # Lab_10: Environnement privé
+<img width='800' src='../images/Lab_10/Lab_10_0.png'/>
 Azure Container Apps s'exécute dans le contexte d'un environnement, qui est pris en charge par un réseau virtuel (VNET).Lorsque vous créez un environnement, vous pouvez fournir un VNET personnalisé, sinon un VNET est automatiquement généré pour vous. Les VNET générés vous sont inaccessibles car ils sont créés dans le locataire de Microsoft. Pour avoir un contrôle total sur votre VNET, fournissez un VNET existant à Container Apps lorsque vous créez votre environnement.<br>
 Ils existe deux niveaux accessibilité:
 |Niveau d’accessibilité|Description                                          |
@@ -169,7 +170,7 @@ az containerapp create \
   --query properties.configuration.ingress.fqdn
 ```
 Observez l'output de l'url <br>
-Essayez
+Essayez de faire un curl sur l'output de l'url
 ```
 curl https://nginx-container-app.proudglacier-77985e33.westeurope.azurecontainerapps.io/
 curl: (6) Could not resolve host: nginx-container-app.proudglacier-77985e33.westeurope.azurecontainerapps.io
@@ -219,15 +220,42 @@ az vm create \
     --admin-username $USER_NAME \
     --admin-password $PASSWORD_USER
 ```
-Récupérer l'"publicIpAddress" <br>
+Récupérer la "publicIpAddress" <br>
 Connectez vous à la VM de test (mdp:Password123!):<br>
 ```
 ssh azureuser@<PULICIP>
 ```
 Dans la VM de test, refaire un curl de l'URL de l'Azure Container App. Ex:<br>
 curl https://nginx-container-app.purplerock-adf3f498.westeurope.azurecontainerapps.io
-``
+```
+Cela doit nous retourner:
+```
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+``` 
 Fin du Lab_10
 ```
+exit
 az group delete --resource-group $RESOURCE_GROUP --yes
 ```
