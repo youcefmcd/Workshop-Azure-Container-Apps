@@ -14,7 +14,7 @@ Etapes pour ce Lab_10:<br>
 - Création de "Container Apps environment with the VNET and subnet"
 - Création et paramétrage d'un "private DNS"
 - Création d'une "Azure Container App"
-- Test dans l'environnement privé
+- Test dans l'environnement privé avec une VM
 
 
 Voici les variables:<br>
