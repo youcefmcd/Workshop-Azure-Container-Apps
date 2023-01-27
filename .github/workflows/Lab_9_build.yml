@@ -28,4 +28,5 @@ jobs:
         uses: azure/container-apps-deploy-action@v0
         with:
           appSourcePath: ${{ github.workspace }}
-          acrName: acrlab9.azurecr.io
+          acrName: acrlab9
+          resourceGroup: RG_Lab_9
