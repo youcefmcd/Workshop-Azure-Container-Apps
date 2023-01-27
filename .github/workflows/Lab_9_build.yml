@@ -1,0 +1,31 @@
+name: 2. Build - Lab_9
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+
+
+    steps:
+
+      - name: Checkout du Repo
+        uses: actions/checkout@v3
+        with:
+         path: ./Lab_9/App
+
+      - name: test
+        run: |
+          ls -lisa
+    
+#      - name: Log in to Azure
+#        uses: azure/login@v1
+#        with:
+#          creds: ${{ secrets.AZURE_CREDENTIALS }}
+#    
+#      - name: Build and deploy Container App
+#        uses: azure/container-apps-deploy-action@v0
+#        with:
+#          appSourcePath: ${{ github.workspace }}
+#          acrName: acrlab9
