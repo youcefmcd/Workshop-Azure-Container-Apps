@@ -11,7 +11,8 @@ RESOURCE_GROUP="RG_Lab_9"
 LOCATION="westeurope"
 ACR_NAME="acrlab9"
 ENVIRONMENT_NAME="Lab-9-env"
-APPLICATION="hello"
+APPLICATION="hello-aca"
+VERSION_APPLICATION=1.0.0
 ```
 Création du "Resource Group"<br>
 ```
@@ -46,3 +47,11 @@ az containerapp env create \
 test et visualisation de "Container Apps environment"
 ```
 az containerapp env list --resource-group $RESOURCE_GROUP -o jsonc
+
+
+
+Build & Push Application
+```
+cd ./Lab_6/App
+az acr build -t $ACR_NAME.azurecr.io/$APPLICATION:$VERSION_APPLICATION -r $ACR_NAME .
+```
