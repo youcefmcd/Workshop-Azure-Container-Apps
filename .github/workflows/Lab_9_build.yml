@@ -16,7 +16,7 @@ jobs:
 
       - name: test
         run: |
-          cd ./Lab_9 
+          cd ./Lab_9/App 
           ls -lisa
     
 #      - name: Log in to Azure
