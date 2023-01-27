@@ -47,8 +47,7 @@ az containerapp env create \
 test et visualisation de "Container Apps environment"
 ```
 az containerapp env list --resource-group $RESOURCE_GROUP -o jsonc
-
-
+```
 
 Build & Push Application
 ```
