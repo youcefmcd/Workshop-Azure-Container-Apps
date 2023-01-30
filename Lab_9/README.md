@@ -5,7 +5,6 @@
 L'objectif de ce Lab 9, c'est blabla
 
 
-
 ```
 RESOURCE_GROUP="RG_Lab_9"
 LOCATION="westeurope"
@@ -51,6 +50,42 @@ az containerapp env list --resource-group $RESOURCE_GROUP -o jsonc
 
 Build & Push Application
 ```
-cd ./Lab_6/App
+cd ./Lab_9/App
 az acr build -t $ACR_NAME.azurecr.io/$APPLICATION:$VERSION_APPLICATION -r $ACR_NAME .
 ```
+
+Deploiement de l'application "hello-aca"
+```
+REGISTRY_PASSWORD=$(az acr credential show --name $ACR_NAME -o tsv --query "passwords[0].value")
+
+az containerapp create \
+  --name $APPLICATION \
+  --resource-group $RESOURCE_GROUP \
+  --environment $ENVIRONMENT_NAME \
+  --image $ACR_NAME.azurecr.io/$APPLICATION:$VERSION_APPLICATION \
+  --registry-server $ACR_NAME.azurecr.io \
+  --registry-username $ACR_NAME \
+  --registry-password $REGISTRY_PASSWORD \
+  --target-port 3000 \
+  --ingress 'external' \
+  --query properties.configuration.ingress.fqdn \
+  -o jsonc
+```
+Test de l'application<br>
+Ouvrir un navigateur 
+
+
+Modification de l'App
+
+Dans le fichier ./App/index.html -> ligne 21<br>
+Modifiez v1 en v2
+```
+Welcome to Azure Container Apps! (v1)
+en
+Welcome to Azure Container Apps! (v2)
+```
+Build & Push de la nouvelle version de l'application<br>
+
+```
+az acr build -t $ACR_NAME.azurecr.io/$APPLICATION:2.0.0 -r $ACR_NAME .
+``` 

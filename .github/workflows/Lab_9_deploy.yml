@@ -24,3 +24,4 @@ jobs:
           imageToBuild: acrlab9.azurecr.io/hello-aca:1.0.0
           containerAppName: hello-aca
           containerAppEnvironment: Lab-9-env
+          location: westeurope
