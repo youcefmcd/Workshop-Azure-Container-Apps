@@ -3,17 +3,23 @@ name: 2. Revision - Lab_9
 on:
   workflow_dispatch:
 
+env:
+  RESOURCE_GROUP: RG_Lab_9
+  ACR_NAME: acrlab9
+  APPLICATION: hello-aca
+  REV_APPLICATION: rev-02
+  VERSION_2_APPLICATION: 2.0.0
+
 jobs:
-  Deploy:
+  New-Revision-Application:
     runs-on: ubuntu-latest
 
     steps:
 
       - name: Checkout du Repo
         uses: actions/checkout@v3
-
     
-      - name: Log in to Azure
+      - name: Login to Azure
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
@@ -22,10 +28,7 @@ jobs:
         uses: Azure/aca-review-apps@v0.2.0
         id: aca_new_revision
         with:
-          resource-group: RG_Lab_9
-          name: hello-aca
-          revision-name-suffix: rev2
-          image: acrlab9.azurecr.io/hello-aca:2.0.0
-
-
-
+          resource-group: ${{ env.RESOURCE_GROUP }}
+          name: ${{ env.APPLICATION }}
+          revision-name-suffix: ${{ env.REV_APPLICATION }}
+          image: ${{ env.ACR_NAME }}.azurecr.io/${{ env.APLICATION }}:${{ env.VERSION_2_APPLICATION }}
