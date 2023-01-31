@@ -2,7 +2,8 @@
 # Lab_9: Pipeline "revision"
 
 ## Objectif:
-L'objectif de ce Lab 9, c'est blabla
+L'objectif de ce Lab 9, c'est de gérer les révisions d'une Application(Azure Container App) avec un "Workflow GitHub Action" en s'appuyant sur une "action Azure/aca-review-apps@v0.2.0"<br>
+
 
 
 ```
@@ -11,7 +12,9 @@ LOCATION="westeurope"
 ACR_NAME="acrlab9"
 ENVIRONMENT_NAME="Lab-9-env"
 APPLICATION="hello-aca"
-VERSION_APPLICATION=1.0.0
+VERSION_1_APPLICATION=1.0.0
+REVISION_01=rev-01
+VERSION_2_APPLICATION=2.0.0
 ```
 Création du "Resource Group"<br>
 ```
@@ -51,7 +54,7 @@ az containerapp env list --resource-group $RESOURCE_GROUP -o jsonc
 Build & Push Application
 ```
 cd ./Lab_9/App
-az acr build -t $ACR_NAME.azurecr.io/$APPLICATION:$VERSION_APPLICATION -r $ACR_NAME .
+az acr build -t $ACR_NAME.azurecr.io/$APPLICATION:$VERSION_1_APPLICATION -r $ACR_NAME .
 ```
 test -> Build & Push Application
 ```
@@ -69,6 +72,7 @@ az containerapp create \
   --resource-group $RESOURCE_GROUP \
   --environment $ENVIRONMENT_NAME \
   --image $ACR_NAME.azurecr.io/$APPLICATION:$VERSION_APPLICATION \
+  --revision-suffix $REVISION_01 \
   --registry-server $ACR_NAME.azurecr.io \
   --registry-username $ACR_NAME \
   --registry-password $REGISTRY_PASSWORD \
@@ -82,7 +86,6 @@ Ouvrir un navigateur et allez sur l'URL de l'output de l'app "hello-aca", vous d
 ```
 Welcome to Azure Container Apps! (v1)
 ```
-
 Modification de l'App
 
 Dans le fichier ./App/index.html -> ligne 21<br>
@@ -92,8 +95,28 @@ Welcome to Azure Container Apps! (v1)
 en
 Welcome to Azure Container Apps! (v2)
 ```
-Build & Push de la nouvelle version de l'application<br>
+Build & Push de la nouvelle version de l'application
 
 ```
-az acr build -t $ACR_NAME.azurecr.io/$APPLICATION:2.0.0 -r $ACR_NAME .
-``` 
+az acr build -t $ACR_NAME.azurecr.io/$APPLICATION:$VERSION_2_APPLICATION -r $ACR_NAME .
+```
+Test -> Build & Push de la nouvelle version de l'application
+```
+az acr repository show-tags --name $ACR_NAME --repository $APPLICATION  --orderby time_desc --output table
+Result
+--------
+2.0.0
+1.0.0
+```
+
+Déploiement d'une nouvelle révision (V2)
+Allez dans le Workflow `./github/workflows/Lab9_revision.yml`<br>
+Modifiez le workflows avec votre environnement
+
+
+
+
+
+
+az containerapp ingress traffic show --name hello-aca --resource-group RG_Lab_9
+az containerapp ingress traffic set -n hello-aca -g RG_Lab_9 --revision-weight hello-aca--jvnjwhs=50 hello-aca--rev2=50
