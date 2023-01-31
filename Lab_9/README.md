@@ -43,7 +43,7 @@ az containerapp env create \
   --location $LOCATION \
   --logs-destination none
 ```
-test et visualisation de "Container Apps environment"
+test -> Visualisation de "Container Apps environment"
 ```
 az containerapp env list --resource-group $RESOURCE_GROUP -o jsonc
 ```
@@ -53,7 +53,13 @@ Build & Push Application
 cd ./Lab_9/App
 az acr build -t $ACR_NAME.azurecr.io/$APPLICATION:$VERSION_APPLICATION -r $ACR_NAME .
 ```
-
+test -> Build & Push Application
+```
+az acr repository list --name $ACR_NAME -o table
+Result
+---------
+hello-aca
+```
 Deploiement de l'application "hello-aca"
 ```
 REGISTRY_PASSWORD=$(az acr credential show --name $ACR_NAME -o tsv --query "passwords[0].value")
@@ -72,8 +78,10 @@ az containerapp create \
   -o jsonc
 ```
 Test de l'application<br>
-Ouvrir un navigateur 
-
+Ouvrir un navigateur et allez sur l'URL de l'output de l'app "hello-aca", vous devez avoir :<br>
+```
+Welcome to Azure Container Apps! (v1)
+```
 
 Modification de l'App
 
