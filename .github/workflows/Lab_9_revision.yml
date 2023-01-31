@@ -31,4 +31,4 @@ jobs:
           resource-group: ${{ env.RESOURCE_GROUP }}
           name: ${{ env.APPLICATION }}
           revision-name-suffix: ${{ env.REV_APPLICATION }}
-          image: ${{ env.ACR_NAME }}.azurecr.io/${{ env.APLICATION }}:${{ env.VERSION_2_APPLICATION }}
+          image: ${{ env.ACR_NAME }}.azurecr.io/${{ env.APPLICATION }}:${{ env.VERSION_2_APPLICATION }}
