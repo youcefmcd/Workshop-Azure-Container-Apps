@@ -58,6 +58,8 @@ az acr build -t $ACR_NAME.azurecr.io/$APPLICATION:$VERSION_1_APPLICATION -r $ACR
 test -> Build & Push Application
 ```
 az acr repository list --name $ACR_NAME -o table
+```
+```
 Result
 ---------
 hello-aca
