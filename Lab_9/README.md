@@ -70,7 +70,7 @@ az containerapp create \
   --name $APPLICATION \
   --resource-group $RESOURCE_GROUP \
   --environment $ENVIRONMENT_NAME \
-  --image $ACR_NAME.azurecr.io/$APPLICATION:$VERSION_APPLICATION \
+  --image $ACR_NAME.azurecr.io/$APPLICATION:$VERSION_1_APPLICATION \
   --revision-suffix $REVISION_01 \
   --registry-server $ACR_NAME.azurecr.io \
   --registry-username $ACR_NAME \
