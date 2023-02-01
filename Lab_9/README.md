@@ -141,7 +141,7 @@ RevisionName       Weight
 hello-aca--rev-01  0
 hello-aca--rev-02  100
 ```
-Récupération de l'URL l'application plus test
+Test de la nouvelle révision
 ```
 URL=`(az containerapp show \
   --name $APPLICATION \
@@ -149,7 +149,7 @@ URL=`(az containerapp show \
   --query properties.configuration.ingress.fqdn -o tsv)`
 curl https://$URL
 ```
-Checker la modification
+Checkez la modification
 ```
 Welcome to Azure Container Apps! (v2)
 ```
