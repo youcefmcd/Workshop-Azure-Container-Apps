@@ -104,6 +104,8 @@ az acr build -t $ACR_NAME.azurecr.io/$APPLICATION:$VERSION_2_APPLICATION -r $ACR
 Test -> Build & Push de la nouvelle version de l'application
 ```
 az acr repository show-tags --name $ACR_NAME --repository $APPLICATION  --orderby time_desc --output table
+```
+```
 Result
 --------
 2.0.0
