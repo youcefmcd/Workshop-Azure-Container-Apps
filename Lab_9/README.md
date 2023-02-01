@@ -15,6 +15,7 @@ APPLICATION="hello-aca"
 VERSION_1_APPLICATION=1.0.0
 REVISION_01=rev-01
 VERSION_2_APPLICATION=2.0.0
+REVISION_02=rev-02
 ```
 Création du "Resource Group"<br>
 ```
@@ -111,12 +112,48 @@ Result
 
 Déploiement d'une nouvelle révision (V2)
 Allez dans le Workflow `./github/workflows/Lab9_revision.yml`<br>
-Modifiez le workflows avec votre environnement
-
-
-
-
-
-
-az containerapp ingress traffic show --name hello-aca --resource-group RG_Lab_9
-az containerapp ingress traffic set -n hello-aca -g RG_Lab_9 --revision-weight hello-aca--jvnjwhs=50 hello-aca--rev2=50
+Modifiez le workflows avec votre environnement<br>
+Déclenchez le Workflows manuellement<br>
+Test -> du déploiement de la nouvelle révision
+```
+az containerapp ingress traffic show --name $APPLICATION --resource-group $RESOURCE_GROUP -o table
+```
+```
+RevisionName       Weight
+-----------------  --------
+hello-aca--rev-01  100
+hello-aca--rev-02  0
+```
+Pour la redirection du trafic vers la revision "rev-02"<br>
+```
+az containerapp ingress traffic set \
+  --name $APPLICATION \
+  --resource-group $RESOURCE_GROUP \
+  --revision-weight $APPLICATION--$REVISION_01=0 $APPLICATION--$REVISION_02=100
+```
+Test -> Pour la redirection du trafic vers la revision "rev-02"
+```
+az containerapp ingress traffic show --name $APPLICATION --resource-group $RESOURCE_GROUP -o table
+```
+```
+RevisionName       Weight
+-----------------  --------
+hello-aca--rev-01  0
+hello-aca--rev-02  100
+```
+Récupération de l'URL l'application plus test
+```
+URL=`(az containerapp show \
+  --name $APPLICATION \
+  --resource-group $RESOURCE_GROUP \
+  --query properties.configuration.ingress.fqdn -o tsv)`
+curl https://$URL
+```
+Checker la modification
+```
+Welcome to Azure Container Apps! (v2)
+```
+fin du Lab
+```
+az group delete --name $RESOURCE_GROUP --yes
+```
