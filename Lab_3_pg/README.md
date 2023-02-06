@@ -3,7 +3,7 @@
 ## Objectif:
 L'objectif de ce Lab 3 c'est de déployer une application (en micro-services) dans le service "Azure Container Apps"<br>
 
-Variables
+Variables pour ce Lab
 ```
 RESOURCE_GROUP="RG_Lab_3_pg"
 LOCATION="westeurope"
