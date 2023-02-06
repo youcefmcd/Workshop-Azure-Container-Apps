@@ -48,6 +48,10 @@ az postgres flexible-server create \
   --storage-size $POSTGRESQL_STORAGESIZE \
   --public-access 0.0.0.0 --yes
 ```
+Test -> Création du "logical server"
+```
+az postgres flexible-server show --resource-group $RESOURCE_GROUP --name $POSTGRESQL_NAME -o table
+```
 Création "Firewall rule to allow access from internet"
 ```
 az postgres flexible-server firewall-rule create \
