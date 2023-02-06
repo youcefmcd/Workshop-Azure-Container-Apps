@@ -140,7 +140,7 @@ az containerapp create \
   --registry-server $ACR_NAME.azurecr.io \
   --query configuration.ingress.fqdn
 ```
-Test API
+Test API<br>
 Récupérer l'output de l'api ex:<br>
 Version API
 ```
