@@ -118,7 +118,7 @@ Test -> Visualisation de "Container Apps environment"
 ```
 az containerapp env list --resource-group $RESOURCE_GROUP -o jsonc
 ```
-Attendre et relancer la commande ci-dessus jusqu'à `"provisioningState": "Waiting"`<br>
+Attendre et relancer la commande ci-dessus jusqu'à avoir `"provisioningState": "Succeeded"`<br>
 Déploiement API dans Azure Container Apps
 ```
 REGISTRY_PASSWORD=$(az acr credential show --name $ACR_NAME -o tsv --query "passwords[0].value")
