@@ -4,9 +4,9 @@
 L'objectif de ce Lab 3 c'est de déployer une application (en micro-services) dans le service "Azure Container Apps"<br>
 ### Etapes du Lab:
 - Création de la Base de donnée
+- Déploiement de "Azure Apps Environnment"
 - Déploiement d'une "Azure Container Registry"
 - "Build & Push" de l'image API
-- Déploiement de "Azure Apps Environnment"
 - Déploiement et tests de "App Container" API
 - "Build & Push" de l'image Front
 - Déploiement et tests de "App Container" FRONT
