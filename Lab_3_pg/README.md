@@ -133,7 +133,7 @@ az acr repository list --name $ACR_NAME -o table
 
 Avant de déployer l'API <br>
 Exécutez la commande `az containerapp env list --resource-group $RESOURCE_GROUP -o jsonc`<br>
-`"provisioningState": "Succeeded"`<br>
+Vérifier l'état : `"provisioningState": "Succeeded"`<br>
 Déploiement API dans Azure Container Apps
 ```
 REGISTRY_PASSWORD=$(az acr credential show --name $ACR_NAME -o tsv --query "passwords[0].value")
