@@ -97,6 +97,18 @@ az postgres flexible-server execute \
   --database-name $POSTGRESQL_DBNAME \
   --file-path create_tables.sql
 ```
+Création de "Container Apps environment":
+```
+az containerapp env create \
+  --name $ENVIRONMENT_NAME \
+  --resource-group $RESOURCE_GROUP \
+  --location $LOCATION \
+  --logs-destination none
+```
+Test -> Visualisation de "Container Apps environment"
+```
+az containerapp env list --resource-group $RESOURCE_GROUP -o jsonc
+```
 Création de "Azure Container Registry"
 ```
 az acr create \
@@ -118,19 +130,10 @@ Test -> Build et Push Image API
 ```
 az acr repository list --name $ACR_NAME -o table
 ```
-Création de "Container Apps environment":
-```
-az containerapp env create \
-  --name $ENVIRONMENT_NAME \
-  --resource-group $RESOURCE_GROUP \
-  --location $LOCATION \
-  --logs-destination none
-```
-Test -> Visualisation de "Container Apps environment"
-```
-az containerapp env list --resource-group $RESOURCE_GROUP -o jsonc
-```
-Attendre et relancer la commande ci-dessus jusqu'à avoir `"provisioningState": "Succeeded"`<br>
+
+Avant de déployer l'API <br>
+Exécutez la commande `az containerapp env list --resource-group $RESOURCE_GROUP -o jsonc`<br>
+`"provisioningState": "Succeeded"`<br>
 Déploiement API dans Azure Container Apps
 ```
 REGISTRY_PASSWORD=$(az acr credential show --name $ACR_NAME -o tsv --query "passwords[0].value")
