@@ -97,6 +97,10 @@ az acr create \
   --sku $ACR_SKUNAME \
   --admin-enabled true
 ```
+Test -> Création de "Azure Container Registry"
+```
+az acr list --resource-group $RESOURCE_GROUP -o table
+```
 Build et Push Image API<br>
 Allez dans `./Lab_3_pg/API`
 ```
