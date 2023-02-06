@@ -2,6 +2,8 @@
 <img width='800' src='../images/Lab_3_pg/Lab_3_pg_00.png'/><br>
 ## Objectif:
 L'objectif de ce Lab 3 c'est de déployer une application (en micro-services) dans le service "Azure Container Apps"<br>
+### Etapes du Lab:
+- Création de la Base de donnée
 
 Variables pour ce Lab
 ```
