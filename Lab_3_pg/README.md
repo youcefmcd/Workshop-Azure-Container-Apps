@@ -204,6 +204,10 @@ Build et Push Image FRONT<br>
 ```
 az acr build -t $ACR_NAME.azurecr.io/$APP_FRONT_NAME:$APP_FRONT_IMAGE_VERSION -r $ACR_NAME .
 ```
+Test -> Build et Push Image FRONT
+```
+az acr repository list --name $ACR_NAME -o table
+```
 ```
 REGISTRY_PASSWORD=$(az acr credential show --name $ACR_NAME -o tsv --query "passwords[0].value")
 az containerapp create \
