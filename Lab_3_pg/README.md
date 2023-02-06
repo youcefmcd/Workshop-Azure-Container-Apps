@@ -30,6 +30,10 @@ az group create \
   --name $RESOURCE_GROUP \
   --location $LOCATION
 ```
+Test -> Création de "resource group"
+```
+az group show --resource-group $RESOURCE_GROUP -o table
+```
 Création du "logical server"
 ```
 az postgres flexible-server create \
