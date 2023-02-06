@@ -75,6 +75,10 @@ az postgres flexible-server db create \
   --server-name $POSTGRESQL_NAME \
   --database-name $POSTGRESQL_DBNAME
 ```
+Test -> Création de la base
+```
+az postgres flexible-server db show --resource-group $RESOURCE_GROUP --server-name $POSTGRESQL_NAME --database-name $POSTGRESQL_DBNAME -o table
+```
 Création des tables<br>
 Allez dans ./Lab_3_pg/DB
 ```
