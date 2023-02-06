@@ -185,7 +185,7 @@ Résultat:<br>
 ```
 rugby-api.purpleisland-7a4fc55f.westeurope.azurecontainerapps.io
 ```
-Allez dans `./Lab_3/App/front`<br>
+Allez dans `./Lab_3_pg/FRONT`<br>
 Observez le fichier `index.html`<br>
 Il faut remplacer `http://localhost:3000` par l'url de l'API (six lignes)<br>
 ex: <br>
