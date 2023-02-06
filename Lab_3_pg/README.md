@@ -106,6 +106,10 @@ Allez dans `./Lab_3_pg/API`
 ```
 az acr build -t $ACR_NAME.azurecr.io/$APP_API_NAME:$APP_API_IMAGE_VERSION -r $ACR_NAME .
 ```
+Test -> Build et Push Image API
+```
+az acr repository list --name $ACR_NAME -o table
+```
 Création de "Container Apps environment":
 ```
 az containerapp env create \
