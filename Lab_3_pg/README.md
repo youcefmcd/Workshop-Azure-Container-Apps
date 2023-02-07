@@ -69,7 +69,7 @@ az postgres flexible-server firewall-rule create \
   --start-ip-address 0.0.0.0 \
   --end-ip-address 255.255.255.255
 ```
-Authorisation "Allow non-SSL connections" (Pas conseillé ...)
+Authorisation "Allow non-SSL connections" (Pas conseillé / Mode Workshop ! ...)
 ```
 az postgres flexible-server parameter set \
   --resource-group $RESOURCE_GROUP \
