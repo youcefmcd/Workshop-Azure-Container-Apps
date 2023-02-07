@@ -234,3 +234,6 @@ az containerapp create \
   --registry-password $REGISTRY_PASSWORD \
   --query configuration.ingress.fqdn
 ```
+Test du FRONT<br>
+Récupérez l'output et tester dans un navigateur<br>
+<img width='800' src='../images/Lab_3_pg/Lab_3_pg_01.png'/><br>
