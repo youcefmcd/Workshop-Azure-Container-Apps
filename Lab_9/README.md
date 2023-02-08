@@ -135,6 +135,17 @@ Déploiement d'une nouvelle révision (V2)
 Allez dans le Workflow `./github/workflows/Lab9_revision.yml`<br>
 Modifiez le workflows avec votre environnement<br>
 Déclenchez le Workflows manuellement<br>
+Pour déclancher le workflow:<br>
+<img width='800' src='../images/Lab_3/Lab_3_03bis.png'/><br>
+<img width='800' src='../images/Lab_3/Lab_3_03.png'/><br>
+Pour suivre l'exécution du workflows:<br>
+<img width='800' src='../images/Lab_3/Lab_3_04.png'/><br>
+<br>
+<img width='800' src='../images/Lab_3/Lab_3_05.png'/><br>
+<br>
+<img width='800' src='../images/Lab_3/Lab_3_06.png'/><br>
+<br>
+<img width='800' src='../images/Lab_3/Lab_3_07.png'/><br>
 Test -> du déploiement de la nouvelle révision
 ```
 az containerapp ingress traffic show --name $APPLICATION --resource-group $RESOURCE_GROUP -o table
