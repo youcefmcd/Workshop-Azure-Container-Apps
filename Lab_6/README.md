@@ -4,6 +4,21 @@
 L'objectif de ce Lab 6, c'est d'utiliser les "GitHub Actions" pour publier les révisions d'une application de conteneur. Au fur et à mesure que les "commits" sont poussés vers le dépôt GitHub, une "GitHub Actions" est déclenchée et met à jour l'image du conteneur dans "l'Azure Container Registry". Une fois le conteneur mis à jour dans cette dernière, Azure Container Apps crée une nouvelle révision basée sur l'image de conteneur mise à jour.
 
 ## Préparation de l'environnement
+Création d'un "service principal"<br>
+```
+az ad sp create-for-rbac --name "mySPN" --role "Contributor" --scopes /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx --sdk-aut -o jsonc
+```
+Copiez les informations dans un "notepad" ou autres (on s'en servira pour le Lab 9<br>
+Gardez cette structure:<br>
+```
+{
+  "clientId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "clientSecret": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "subscriptionId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+}
+```
+
 Affectation des variables:<br>
 ```
 RESOURCE_GROUP="RG-Lab6"
