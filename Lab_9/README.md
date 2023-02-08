@@ -3,7 +3,7 @@
 
 ## Objectif:
 L'objectif de ce Lab 9, c'est de gérer les révisions d'une Application(Azure Container App) avec un "Workflow GitHub Action" en s'appuyant sur une "action Azure/aca-review-apps@v0.2.0"<br><br>
-Paramétrage "GitHub action"<br>
+
 Prérequis pour GitHub<br>
 On répucère les informations du "Service Principal" (lab 3)<br>
 ```
