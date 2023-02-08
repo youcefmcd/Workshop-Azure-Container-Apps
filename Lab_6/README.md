@@ -8,7 +8,7 @@ Création d'un "service principal"<br>
 ```
 az ad sp create-for-rbac --name "mySPN" --role "Contributor" --scopes /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx --sdk-aut -o jsonc
 ```
-Copiez les informations dans un "notepad" ou autres (on s'en servira pour le Lab 9<br>
+Copiez les informations dans un "notepad" ou autres (on s'en servira pour le Lab 9)<br>
 Gardez cette structure:<br>
 ```
 {
