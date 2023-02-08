@@ -3,6 +3,24 @@
 
 ## Objectif:
 L'objectif de ce Lab 9, c'est de gérer les révisions d'une Application(Azure Container App) avec un "Workflow GitHub Action" en s'appuyant sur une "action Azure/aca-review-apps@v0.2.0"<br>
+Paramétrage "GitHub action"<br>
+On répucère les information du "Service Principal" (lab 3)<br>
+```
+{
+  "clientId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "clientSecret": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "subscriptionId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+}
+```
+Dans GitHub, allez dans le service secret:
+<img width='800' src='../images/Lab_3/Lab_3_00.png'/><br>
+Dans le service secret, créez un secret "AZURE_CREDENTIALS"<br>
+Et mettez le "Service Principal" comme ci-dessous:<br>
+<img width='800' src='../images/Lab_3/Lab_3_01.png'/><br>
+
+
+
 
 ```
 RESOURCE_GROUP="RG_Lab_9"
