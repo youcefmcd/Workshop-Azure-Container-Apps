@@ -2,7 +2,7 @@ name: 2. Revision - Lab_9
 
 on:
   workflow_dispatch:
-
+ 
 env:
   RESOURCE_GROUP: RG_Lab_9
   ACR_NAME: acrlab9
